@@ -1,0 +1,159 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<document version="1.7">
+  <objects>
+    <object id="1" gen="0">
+      <dict>
+        <entry key="Type">
+          <name>Catalog</name>
+        </entry>
+        <entry key="Version">
+          <name>1.7</name>
+        </entry>
+        <entry key="Pages">
+          <ref id="3" gen="0" />
+        </entry>
+        <entry key="Outlines">
+          <ref id="2" gen="0" />
+        </entry>
+      </dict>
+    </object>
+    <object id="2" gen="0">
+      <dict>
+        <entry key="Type">
+          <name>Outlines</name>
+        </entry>
+      </dict>
+    </object>
+    <object id="3" gen="0">
+      <dict>
+        <entry key="Type">
+          <name>Pages</name>
+        </entry>
+        <entry key="Kids">
+          <arr>
+            <entry index="0">
+              <ref id="7" gen="0" />
+            </entry>
+          </arr>
+        </entry>
+        <entry key="Count">
+          <num>1</num>
+        </entry>
+      </dict>
+    </object>
+    <object id="4" gen="0">
+      <dict>
+        <entry key="CreationDate">
+          <string>D:20240319190619+00'00'</string>
+        </entry>
+        <entry key="ModDate">
+          <string>D:20240319190617+00'00'</string>
+        </entry>
+        <entry key="Author">
+          <string>Aspose.Pdf.SvgToPdfConverter</string>
+        </entry>
+        <entry key="Producer">
+          <string>Aspose Pty Ltd.</string>
+        </entry>
+        <entry key="Subject">
+          <string>Aspose</string>
+        </entry>
+        <entry key="Title">
+          <string>Aspose</string>
+        </entry>
+        <entry key="Creator">
+          <string>Aspose.Pdf.SvgToPdfConverter</string>
+        </entry>
+      </dict>
+    </object>
+    <object id="6" gen="0">
+      <stream>
+        <entry key="Filter">
+          <name>FlateDecode</name>
+        </entry>
+        <entry key="Length">
+          <num>8</num>
+        </entry>eJwDAAAAAAE=</stream>
+    </object>
+    <object id="7" gen="0">
+      <dict>
+        <entry key="Type">
+          <name>Page</name>
+        </entry>
+        <entry key="Parent">
+          <ref id="3" gen="0" />
+        </entry>
+        <entry key="MediaBox">
+          <arr>
+            <entry index="0">
+              <num>0</num>
+            </entry>
+            <entry index="1">
+              <num>0</num>
+            </entry>
+            <entry index="2">
+              <num>18</num>
+            </entry>
+            <entry index="3">
+              <num>15</num>
+            </entry>
+          </arr>
+        </entry>
+        <entry key="Contents">
+          <ref id="8" gen="0" />
+        </entry>
+        <entry key="Resources">
+          <dict />
+        </entry>
+        <entry key="CropBox">
+          <arr>
+            <entry index="0">
+              <num>0</num>
+            </entry>
+            <entry index="1">
+              <num>0</num>
+            </entry>
+            <entry index="2">
+              <num>18</num>
+            </entry>
+            <entry index="3">
+              <num>15</num>
+            </entry>
+          </arr>
+        </entry>
+      </dict>
+    </object>
+    <object id="8" gen="0">
+      <stream>
+        <entry key="Filter">
+          <name>FlateDecode</name>
+        </entry>
+        <entry key="Length">
+          <num>521</num>
+        </entry>eJy1VMtu20AMvOsrdC7QBd+Pz8g3GGh9cA7p/x866wRI5cqtEjgwYFvcoTgcDnd5WXglfL7PH/b19Ly8LDRY3JqE1Fc8EHdQlkdFR2cgRm3MGVa9/vqJBDIWM0daiFZ1rzZ8fd49kUFsyelZVdna5jPmjiqcpelIYAMhvGNmi3dbpZJFI3pa9uOXhWWwaQiq9czfjdgImTw8TbLRFqOhlWPEO3CP4hYx2zstf8cuN7Ec0R3WxVQfO6xhmQopyhM0qLwnB7PQhO7KVZbhsfYQAktLEnMNVqkJpG5o1FRmKcAJgMgg62RlvebKaw/HoK8EhROqQ/AeTl3WbqWKP5jbQUiiM5E5AQfTeyEdEd7EXEYFK8KTK/No9alYckkwvq/CfQzLTZbmTLJOf1CgKrFcnyKzBUddAR2v7wHkfUpbQ23PoOU/Ti+7tv0M5m1Z0gMNMpZTbjF7a8fYZMxCnGBo85wq7QI3rjztrvCNce/t/2U5Lyg7a8JeFRJJBR+smAEsAX9pSxLuF1dcFoehU4JZB4uQ/CAEpFTIg0WC85vIDiHuUP4a6F4T5w3JHJWUYpFF2o5RF3T9H+JOwa+B1sC6FaLh1zU/gPmT/+eO9vnBnDpUlJ3i7ZLz1eed5UoUaYbJZMS05jHgtuojEDGkI0ggENuVOB9C7BB+PHCf/nn58W15Wp5+A4bMrTw=</stream>
+    </object>
+  </objects>
+  <trailer>
+    <dict>
+      <entry key="Root">
+        <ref id="1" gen="0" />
+      </entry>
+      <entry key="Info">
+        <ref id="4" gen="0" />
+      </entry>
+      <entry key="ID">
+        <arr>
+          <entry index="0">
+            <string>72-5A-0D-6C-9F-3</string>
+          </entry>
+          <entry index="1">
+            <string>72-5A-0D-6C-9F-3</string>
+          </entry>
+        </arr>
+      </entry>
+      <entry key="Size">
+        <num>7</num>
+      </entry>
+    </dict>
+  </trailer>
+</document>
