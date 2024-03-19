@@ -20,7 +20,7 @@
     <color name="background">#FFFBFF</color>
     <color name="onBackground">#1F1B16</color>
     <color name="surface">#FFFBFF</color>
-    <color name="onSurface">#1F1B16</color>
+    <color name="onSurface">#40000A</color>
     <color name="surfaceVariant">#EFE0CF</color>
     <color name="onSurfaceVariant">#4E4539</color>
     <color name="surfaceContainerLow">#EDD0D3</color>
