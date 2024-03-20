@@ -1,5 +1,6 @@
 package com.example.wakemeup.ui.friends
 
+import android.graphics.drawable.Drawable
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -7,7 +8,10 @@ import android.view.ViewGroup
 import android.widget.TextView
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
+import androidx.recyclerview.widget.LinearLayoutManager
+import com.example.wakemeup.R
 import com.example.wakemeup.databinding.FragmentFriendsBinding
+import java.util.Calendar
 
 class FriendsFragment : Fragment() {
 
@@ -27,6 +31,46 @@ class FriendsFragment : Fragment() {
 
         _binding = FragmentFriendsBinding.inflate(inflater, container, false)
         val root: View = binding.root
+
+        val friendsAdapter = FriendsAdapter(
+            arrayListOf(
+                FriendModel(
+                    name="Daniel",
+                    phoneNumber="1234567890",
+                    isAwake=true,
+                    wakingTime= Calendar.getInstance(),
+                    profilePic= resources.getDrawable(R.drawable.ic_launcher_foreground),
+                    notes="This is a note"
+                ),
+                FriendModel(
+                    name="Peter",
+                    phoneNumber="1234567890",
+                    isAwake=false,
+                    wakingTime= Calendar.getInstance(),
+                    profilePic= resources.getDrawable(R.drawable.ic_launcher_foreground),
+                    notes="This is a note"
+                ),
+                FriendModel(
+                    name="Marina",
+                    phoneNumber="1234567890",
+                    isAwake=true,
+                    wakingTime= Calendar.getInstance(),
+                    profilePic= resources.getDrawable(R.drawable.ic_launcher_foreground),
+                    notes="This is a note"
+                ),
+                FriendModel(
+                    name="hhhhhhhhhhhhhhhhh",
+                    phoneNumber="1234567890",
+                    isAwake=true,
+                    wakingTime= Calendar.getInstance(),
+                    profilePic= resources.getDrawable(R.drawable.ic_launcher_foreground),
+                    notes="This is a note"
+                ),
+            )
+        )
+
+        binding.friendsRecyclerView.adapter = friendsAdapter
+        binding.friendsRecyclerView.layoutManager = LinearLayoutManager(context)
 
         // Example of a LiveData object
 //        val textView: TextView = binding.textFriends
