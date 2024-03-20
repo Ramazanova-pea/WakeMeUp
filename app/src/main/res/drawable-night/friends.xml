@@ -1,159 +1,27 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
-<document version="1.7">
-  <objects>
-    <object id="1" gen="0">
-      <dict>
-        <entry key="Type">
-          <name>Catalog</name>
-        </entry>
-        <entry key="Version">
-          <name>1.7</name>
-        </entry>
-        <entry key="Pages">
-          <ref id="3" gen="0" />
-        </entry>
-        <entry key="Outlines">
-          <ref id="2" gen="0" />
-        </entry>
-      </dict>
-    </object>
-    <object id="2" gen="0">
-      <dict>
-        <entry key="Type">
-          <name>Outlines</name>
-        </entry>
-      </dict>
-    </object>
-    <object id="3" gen="0">
-      <dict>
-        <entry key="Type">
-          <name>Pages</name>
-        </entry>
-        <entry key="Kids">
-          <arr>
-            <entry index="0">
-              <ref id="7" gen="0" />
-            </entry>
-          </arr>
-        </entry>
-        <entry key="Count">
-          <num>1</num>
-        </entry>
-      </dict>
-    </object>
-    <object id="4" gen="0">
-      <dict>
-        <entry key="CreationDate">
-          <string>D:20240319190227+00'00'</string>
-        </entry>
-        <entry key="ModDate">
-          <string>D:20240319190227+00'00'</string>
-        </entry>
-        <entry key="Author">
-          <string>Aspose.Pdf.SvgToPdfConverter</string>
-        </entry>
-        <entry key="Producer">
-          <string>Aspose Pty Ltd.</string>
-        </entry>
-        <entry key="Subject">
-          <string>Aspose</string>
-        </entry>
-        <entry key="Title">
-          <string>Aspose</string>
-        </entry>
-        <entry key="Creator">
-          <string>Aspose.Pdf.SvgToPdfConverter</string>
-        </entry>
-      </dict>
-    </object>
-    <object id="6" gen="0">
-      <stream>
-        <entry key="Filter">
-          <name>FlateDecode</name>
-        </entry>
-        <entry key="Length">
-          <num>8</num>
-        </entry>eJwDAAAAAAE=</stream>
-    </object>
-    <object id="7" gen="0">
-      <dict>
-        <entry key="Type">
-          <name>Page</name>
-        </entry>
-        <entry key="Parent">
-          <ref id="3" gen="0" />
-        </entry>
-        <entry key="MediaBox">
-          <arr>
-            <entry index="0">
-              <num>0</num>
-            </entry>
-            <entry index="1">
-              <num>0</num>
-            </entry>
-            <entry index="2">
-              <num>21.75</num>
-            </entry>
-            <entry index="3">
-              <num>18</num>
-            </entry>
-          </arr>
-        </entry>
-        <entry key="Contents">
-          <ref id="8" gen="0" />
-        </entry>
-        <entry key="Resources">
-          <dict />
-        </entry>
-        <entry key="CropBox">
-          <arr>
-            <entry index="0">
-              <num>0</num>
-            </entry>
-            <entry index="1">
-              <num>0</num>
-            </entry>
-            <entry index="2">
-              <num>21.75</num>
-            </entry>
-            <entry index="3">
-              <num>18</num>
-            </entry>
-          </arr>
-        </entry>
-      </dict>
-    </object>
-    <object id="8" gen="0">
-      <stream>
-        <entry key="Filter">
-          <name>FlateDecode</name>
-        </entry>
-        <entry key="Length">
-          <num>727</num>
-        </entry>eJytVsuO1EAMvOcrckai5Wfb/gy+YSTgkD3A/x+oDrAzs3iWkSCr1STuSqdcdjnZvm28E/4+rh/O/fKyfdtohJ6HlUgUucSOWJKW8KxywYknYumZoq6RMl2Tav/+ZeOhbuxOU6cUO27bYySOcKJATMtc95cWOQfWNad5qZOnl+0yfM5g/FNlVZHobgMnlTFJBPicIYjRFHsb+xN32Z5FHpsP90S2DjkiIrUHzhFBKcRGCfai5G0qHa4T57I9izxaZA1L06nuXnuTA6OgOCACK4ktSa3VrwX2ArbQY+uq10K7drjL49nOumyfP2yf/r2TT0u8rB8bxsSiUJFCxYQXmyybEh7MO/Mw5BYuZDaRmtrSU5RRG0JVesQS8m+YVWCfWYxnzwdPymHQSDxCuGd7j4DTt7eR42e+x/b1P8kHHsQgKdglpk1U0h5Ngg7a+Yd9oOGITI0hiOGx2RqS4QrOCItyVxHwmg+GwdPQY+McwuYoO+lklQSH/vFoXAmmmR7aZ3KH6Nv475jjDebeLx3b3nqdBA+s/zwW5Lpy9Qy6DrjP5tl2+l/2ZxlIbUm2psD1qh0GhhlLGG8o72RsbJq9VSEfGNNiXGoepCyPhsPz2LMPRBAjJAAxGDV6wEB4MFfEO9PiDWSNiz9Cx51Ad2MDRWMNmSbOeDXVKXER16S0ArlCsRCrQE+g/ixmhJNYssdYafqup60W2pNNzm1eXld5oKAwUqEXZqTNmZhx8AGnMOpgeBsuaphpq+TrFlqKXi9O/olSMSJ0ulLjvAG1fPiM18WOHvZ/b/m4LmMiUPEaBo5XWtXZQx2d+LnPik9J46i4ZtQt3uTYLR9bp1KH/K10R/W9Gt3Y75/6wAdf3XdzARVhC0jz8FwHCSYBGaM9bSV5tjlI4CodwUC3J+/QnDFUzp1rKXdzdaDVIsAU31VwsyxH4XsEH1O/mHRPuaF5+W2ITz8ASJ9Hzg==</stream>
-    </object>
-  </objects>
-  <trailer>
-    <dict>
-      <entry key="Root">
-        <ref id="1" gen="0" />
-      </entry>
-      <entry key="Info">
-        <ref id="4" gen="0" />
-      </entry>
-      <entry key="ID">
-        <arr>
-          <entry index="0">
-            <string>34-61-B2-82-AB-5</string>
-          </entry>
-          <entry index="1">
-            <string>34-61-B2-82-AB-5</string>
-          </entry>
-        </arr>
-      </entry>
-      <entry key="Size">
-        <num>7</num>
-      </entry>
-    </dict>
-  </trailer>
-</document>
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="29dp"
+    android:height="24dp"
+    android:viewportWidth="29"
+    android:viewportHeight="24">
+  <path
+      android:pathData="M1.806,10.519a3.611,3.852 0,1 0,7.222 0a3.611,3.852 0,1 0,-7.222 0z"
+      android:fillColor="#BBC7DB"/>
+  <path
+      android:pathData="M0,24C0,19.213 2.526,15.333 5.642,15.333C8.759,15.333 11.285,19.213 11.285,24H0Z"
+      android:fillColor="#BBC7DB"
+      android:fillType="evenOdd"/>
+  <path
+      android:pathData="M18.681,10.519a3.611,3.852 0,1 0,7.222 0a3.611,3.852 0,1 0,-7.222 0z"
+      android:fillColor="#BBC7DB"/>
+  <path
+      android:pathData="M16.875,24C16.875,19.213 19.401,15.333 22.517,15.333C25.634,15.333 28.16,19.213 28.16,24H16.875Z"
+      android:fillColor="#BBC7DB"
+      android:fillType="evenOdd"/>
+  <path
+      android:pathData="M9.375,5.333a5,5.333 0,1 0,10 0a5,5.333 0,1 0,-10 0z"
+      android:fillColor="#D7E3F8"/>
+  <path
+      android:pathData="M6.875,24H22.5C22.5,17.373 19.002,12 14.688,12C10.373,12 6.875,17.373 6.875,24Z"
+      android:fillColor="#D7E3F8"
+      android:fillType="evenOdd"/>
+</vector>

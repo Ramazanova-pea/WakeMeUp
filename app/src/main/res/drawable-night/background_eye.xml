@@ -1,159 +1,25 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
-<document version="1.7">
-  <objects>
-    <object id="1" gen="0">
-      <dict>
-        <entry key="Type">
-          <name>Catalog</name>
-        </entry>
-        <entry key="Version">
-          <name>1.7</name>
-        </entry>
-        <entry key="Pages">
-          <ref id="3" gen="0" />
-        </entry>
-        <entry key="Outlines">
-          <ref id="2" gen="0" />
-        </entry>
-      </dict>
-    </object>
-    <object id="2" gen="0">
-      <dict>
-        <entry key="Type">
-          <name>Outlines</name>
-        </entry>
-      </dict>
-    </object>
-    <object id="3" gen="0">
-      <dict>
-        <entry key="Type">
-          <name>Pages</name>
-        </entry>
-        <entry key="Kids">
-          <arr>
-            <entry index="0">
-              <ref id="7" gen="0" />
-            </entry>
-          </arr>
-        </entry>
-        <entry key="Count">
-          <num>1</num>
-        </entry>
-      </dict>
-    </object>
-    <object id="4" gen="0">
-      <dict>
-        <entry key="CreationDate">
-          <string>D:20240319190226+00'00'</string>
-        </entry>
-        <entry key="ModDate">
-          <string>D:20240319190224+00'00'</string>
-        </entry>
-        <entry key="Author">
-          <string>Aspose.Pdf.SvgToPdfConverter</string>
-        </entry>
-        <entry key="Producer">
-          <string>Aspose Pty Ltd.</string>
-        </entry>
-        <entry key="Subject">
-          <string>Aspose</string>
-        </entry>
-        <entry key="Title">
-          <string>Aspose</string>
-        </entry>
-        <entry key="Creator">
-          <string>Aspose.Pdf.SvgToPdfConverter</string>
-        </entry>
-      </dict>
-    </object>
-    <object id="6" gen="0">
-      <stream>
-        <entry key="Filter">
-          <name>FlateDecode</name>
-        </entry>
-        <entry key="Length">
-          <num>8</num>
-        </entry>eJwDAAAAAAE=</stream>
-    </object>
-    <object id="7" gen="0">
-      <dict>
-        <entry key="Type">
-          <name>Page</name>
-        </entry>
-        <entry key="Parent">
-          <ref id="3" gen="0" />
-        </entry>
-        <entry key="MediaBox">
-          <arr>
-            <entry index="0">
-              <num>0</num>
-            </entry>
-            <entry index="1">
-              <num>0</num>
-            </entry>
-            <entry index="2">
-              <num>180</num>
-            </entry>
-            <entry index="3">
-              <num>95.25</num>
-            </entry>
-          </arr>
-        </entry>
-        <entry key="Contents">
-          <ref id="8" gen="0" />
-        </entry>
-        <entry key="Resources">
-          <dict />
-        </entry>
-        <entry key="CropBox">
-          <arr>
-            <entry index="0">
-              <num>0</num>
-            </entry>
-            <entry index="1">
-              <num>0</num>
-            </entry>
-            <entry index="2">
-              <num>180</num>
-            </entry>
-            <entry index="3">
-              <num>95.25</num>
-            </entry>
-          </arr>
-        </entry>
-      </dict>
-    </object>
-    <object id="8" gen="0">
-      <stream>
-        <entry key="Filter">
-          <name>FlateDecode</name>
-        </entry>
-        <entry key="Length">
-          <num>1656</num>
-        </entry>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</stream>
-    </object>
-  </objects>
-  <trailer>
-    <dict>
-      <entry key="Root">
-        <ref id="1" gen="0" />
-      </entry>
-      <entry key="Info">
-        <ref id="4" gen="0" />
-      </entry>
-      <entry key="ID">
-        <arr>
-          <entry index="0">
-            <string>CD-6D-02-2B-3F-2</string>
-          </entry>
-          <entry index="1">
-            <string>CD-6D-02-2B-3F-2</string>
-          </entry>
-        </arr>
-      </entry>
-      <entry key="Size">
-        <num>7</num>
-      </entry>
-    </dict>
-  </trailer>
-</document>
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="240dp"
+    android:height="127dp"
+    android:viewportWidth="240"
+    android:viewportHeight="127">
+  <path
+      android:pathData="M113.01,69.82C112.78,66.15 115.7,63.04 119.38,63.04C123.01,63.04 125.91,66.06 125.77,69.68L123.66,123.29C123.58,125.26 121.96,126.82 119.99,126.82C118.04,126.82 116.44,125.31 116.32,123.37L113.01,69.82Z"
+      android:fillColor="#17191B"/>
+  <path
+      android:pathData="M202.69,46.51C200.4,43.63 200.59,39.3 203.13,36.54C206.31,33.09 211.59,33.65 213.91,37.67L235.9,75.9C236.93,77.69 236.45,80.07 234.8,81.3C233.21,82.49 231.06,82.22 229.84,80.68L202.69,46.51Z"
+      android:fillColor="#17191B"/>
+  <path
+      android:pathData="M38.66,43.85C40.86,40.91 40.31,36.54 37.44,34.22C34.48,31.82 30.29,32.61 28.37,35.92L5.1,75.97C4.09,77.7 4.52,80 6.08,81.25C7.68,82.52 9.9,82.24 11.12,80.61L38.66,43.85Z"
+      android:fillColor="#17191B"/>
+  <path
+      android:pathData="M68.28,59.81C69.02,56.11 72.7,53.95 76.27,55.11C79.89,56.29 81.84,60.37 80.49,63.91L68.12,96.17C67.46,97.87 65.63,98.73 63.89,98.16C62.14,97.58 61.08,95.74 61.44,93.92L68.28,59.81Z"
+      android:fillColor="#17191B"/>
+  <path
+      android:pathData="M168.04,60.48C167.15,56.51 163,54.4 159.26,56.02C155.79,57.51 154.13,61.62 155.6,65.07L168.84,96.22C169.54,97.86 171.34,98.67 173.04,98.1C174.84,97.51 175.91,95.61 175.5,93.76L168.04,60.48Z"
+      android:fillColor="#17191B"/>
+  <path
+      android:pathData="M230.68,1.34C213.35,28.18 170.62,47.16 120.65,47.16C69.91,47.16 26.63,27.58 9.83,0.08C15.25,38.91 62.67,69.27 120.35,69.27C177.42,69.27 224.43,39.57 230.68,1.34Z"
+      android:fillColor="#17191B"
+      android:fillType="evenOdd"/>
+</vector>

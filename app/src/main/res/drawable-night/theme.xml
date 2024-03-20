@@ -1,159 +1,50 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
-<document version="1.7">
-  <objects>
-    <object id="1" gen="0">
-      <dict>
-        <entry key="Type">
-          <name>Catalog</name>
-        </entry>
-        <entry key="Version">
-          <name>1.7</name>
-        </entry>
-        <entry key="Pages">
-          <ref id="3" gen="0" />
-        </entry>
-        <entry key="Outlines">
-          <ref id="2" gen="0" />
-        </entry>
-      </dict>
-    </object>
-    <object id="2" gen="0">
-      <dict>
-        <entry key="Type">
-          <name>Outlines</name>
-        </entry>
-      </dict>
-    </object>
-    <object id="3" gen="0">
-      <dict>
-        <entry key="Type">
-          <name>Pages</name>
-        </entry>
-        <entry key="Kids">
-          <arr>
-            <entry index="0">
-              <ref id="7" gen="0" />
-            </entry>
-          </arr>
-        </entry>
-        <entry key="Count">
-          <num>1</num>
-        </entry>
-      </dict>
-    </object>
-    <object id="4" gen="0">
-      <dict>
-        <entry key="CreationDate">
-          <string>D:20240319190226+00'00'</string>
-        </entry>
-        <entry key="ModDate">
-          <string>D:20240319190223+00'00'</string>
-        </entry>
-        <entry key="Author">
-          <string>Aspose.Pdf.SvgToPdfConverter</string>
-        </entry>
-        <entry key="Producer">
-          <string>Aspose Pty Ltd.</string>
-        </entry>
-        <entry key="Subject">
-          <string>Aspose</string>
-        </entry>
-        <entry key="Title">
-          <string>Aspose</string>
-        </entry>
-        <entry key="Creator">
-          <string>Aspose.Pdf.SvgToPdfConverter</string>
-        </entry>
-      </dict>
-    </object>
-    <object id="6" gen="0">
-      <stream>
-        <entry key="Filter">
-          <name>FlateDecode</name>
-        </entry>
-        <entry key="Length">
-          <num>8</num>
-        </entry>eJwDAAAAAAE=</stream>
-    </object>
-    <object id="7" gen="0">
-      <dict>
-        <entry key="Type">
-          <name>Page</name>
-        </entry>
-        <entry key="Parent">
-          <ref id="3" gen="0" />
-        </entry>
-        <entry key="MediaBox">
-          <arr>
-            <entry index="0">
-              <num>0</num>
-            </entry>
-            <entry index="1">
-              <num>0</num>
-            </entry>
-            <entry index="2">
-              <num>27</num>
-            </entry>
-            <entry index="3">
-              <num>27</num>
-            </entry>
-          </arr>
-        </entry>
-        <entry key="Contents">
-          <ref id="8" gen="0" />
-        </entry>
-        <entry key="Resources">
-          <dict />
-        </entry>
-        <entry key="CropBox">
-          <arr>
-            <entry index="0">
-              <num>0</num>
-            </entry>
-            <entry index="1">
-              <num>0</num>
-            </entry>
-            <entry index="2">
-              <num>27</num>
-            </entry>
-            <entry index="3">
-              <num>27</num>
-            </entry>
-          </arr>
-        </entry>
-      </dict>
-    </object>
-    <object id="8" gen="0">
-      <stream>
-        <entry key="Filter">
-          <name>FlateDecode</name>
-        </entry>
-        <entry key="Length">
-          <num>693</num>
-        </entry>eJztVkuu1DAQ3OcUWSM9q/+fEyCxA47wJEBoWMCG61PO4y8HIqTZMTNJlE6N012uLnv7uPFO+D7Mi+T++GH7uNHIsCSvDs30UKsdsSMYxO4V5YpQMc8gJ++f3m6sI4y0u1UqGCeWnRtBESKL7qQkRfDDxjnEw5zClTIwQtUaKzS4siTYIziEqW3nGMlUYh1hSjhRnCB14FJObsTBR1b743Yde1tje1hWdhd3W0g1ElgWFcMtbfJEUUHqDOCKqRXwcbsMvW1Mg8RMHAnEEpOoT0mS2TCFfLC2KmSFOyHyMvS2hq4m8tdClqq4rrXH7d2JMmM0GzuJFimyaK2pTB9pnTj+hsV0m08kcapql82gDyFjawGZ7CVI4gS5JvQ69naCpdE15x5t+pVoZLCqqofkAbR6+nP6mtgV8ESaKygS5eEK1lq5kRdRIv8VtEcJM4FnQxEQrce6oCVwzehl6G0NXc7oqqC1Si5rbyr1zbPtJRz4AXZLCCcG9um9V25qpIBGdLIrWt5RxNoTYfL/YvGvnm+oJTA2mEDB1gyy9s8b7S9wvMfxwKOUCxaIX3UKx+ypkwe3zUZIJ4YhvP8E8/pg5C4Ji8B9wI8RFcMFD3ZEB8ND4ORqGR7iqOAqElKHoSrm2IOn6R5RxAriSVdpVPCtK+5YmQ2Phiq0I3dA2QWJUBlqOX82PbpMIi1V5jJTVe1dSN7UHbb6c9Y/lPerXP90Byaow/EC9Lw4N7oI7yEYWLkgOLsLjP2X6PeeYhmF5XlOkKsGfANL5Oyp5YPfeuoEc0flwe8Mlp7Qu4VqHhsKCSxUUL0pq7rBS7nnWnsZezvBwjJwi50LcU2B1r0ba5nGE+WSGjrXKPE8dhJXoSfFYReED1dkpBjs0GaH3tcOFZum6QWFVl3r7gIIW+b8k/JefgGZ2Hyi</stream>
-    </object>
-  </objects>
-  <trailer>
-    <dict>
-      <entry key="Root">
-        <ref id="1" gen="0" />
-      </entry>
-      <entry key="Info">
-        <ref id="4" gen="0" />
-      </entry>
-      <entry key="ID">
-        <arr>
-          <entry index="0">
-            <string>B9-CF-15-05-81-3</string>
-          </entry>
-          <entry index="1">
-            <string>B9-CF-15-05-81-3</string>
-          </entry>
-        </arr>
-      </entry>
-      <entry key="Size">
-        <num>7</num>
-      </entry>
-    </dict>
-  </trailer>
-</document>
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="36dp"
+    android:height="36dp"
+    android:viewportWidth="36"
+    android:viewportHeight="36">
+  <path
+      android:pathData="M18.187,26.19C23.009,26.19 26.917,22.281 26.917,17.46C26.917,12.638 23.009,8.73 18.187,8.73C13.366,8.73 9.457,12.638 9.457,17.46C9.457,22.281 13.366,26.19 18.187,26.19ZM18.187,22.552C21,22.552 23.28,20.272 23.28,17.46C23.28,14.647 21,12.367 18.187,12.367C15.375,12.367 13.095,14.647 13.095,17.46C13.095,20.272 15.375,22.552 18.187,22.552Z"
+      android:fillColor="#C3C6CF"
+      android:fillType="evenOdd"/>
+  <path
+      android:pathData="M9.913,25.19L5.548,29.555"
+      android:strokeWidth="4.885"
+      android:fillColor="#00000000"
+      android:strokeColor="#C3C6CF"/>
+  <path
+      android:pathData="M30.282,30.827L25.917,26.462"
+      android:strokeWidth="4.88491"
+      android:fillColor="#00000000"
+      android:strokeColor="#C3C6CF"/>
+  <path
+      android:pathData="M6.092,4.82L10.457,9.185"
+      android:strokeWidth="4.88491"
+      android:fillColor="#00000000"
+      android:strokeColor="#C3C6CF"/>
+  <path
+      android:pathData="M27.189,9.729L31.554,5.365"
+      android:strokeWidth="4.885"
+      android:fillColor="#00000000"
+      android:strokeColor="#C3C6CF"/>
+  <path
+      android:pathData="M0,17.2L6.173,17.2"
+      android:strokeWidth="4.88491"
+      android:fillColor="#00000000"
+      android:strokeColor="#C3C6CF"/>
+  <path
+      android:pathData="M17.927,35.272L17.927,29.1"
+      android:strokeWidth="4.88491"
+      android:fillColor="#00000000"
+      android:strokeColor="#C3C6CF"/>
+  <path
+      android:pathData="M17.927,6.173L17.927,0"
+      android:strokeWidth="4.88491"
+      android:fillColor="#00000000"
+      android:strokeColor="#C3C6CF"/>
+  <path
+      android:pathData="M29.827,17.2L36,17.2"
+      android:strokeWidth="4.88491"
+      android:fillColor="#00000000"
+      android:strokeColor="#C3C6CF"/>
+</vector>

@@ -1,159 +1,48 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
-<document version="1.7">
-  <objects>
-    <object id="1" gen="0">
-      <dict>
-        <entry key="Type">
-          <name>Catalog</name>
-        </entry>
-        <entry key="Version">
-          <name>1.7</name>
-        </entry>
-        <entry key="Pages">
-          <ref id="3" gen="0" />
-        </entry>
-        <entry key="Outlines">
-          <ref id="2" gen="0" />
-        </entry>
-      </dict>
-    </object>
-    <object id="2" gen="0">
-      <dict>
-        <entry key="Type">
-          <name>Outlines</name>
-        </entry>
-      </dict>
-    </object>
-    <object id="3" gen="0">
-      <dict>
-        <entry key="Type">
-          <name>Pages</name>
-        </entry>
-        <entry key="Kids">
-          <arr>
-            <entry index="0">
-              <ref id="7" gen="0" />
-            </entry>
-          </arr>
-        </entry>
-        <entry key="Count">
-          <num>1</num>
-        </entry>
-      </dict>
-    </object>
-    <object id="4" gen="0">
-      <dict>
-        <entry key="CreationDate">
-          <string>D:20240319190619+00'00'</string>
-        </entry>
-        <entry key="ModDate">
-          <string>D:20240319190617+00'00'</string>
-        </entry>
-        <entry key="Author">
-          <string>Aspose.Pdf.SvgToPdfConverter</string>
-        </entry>
-        <entry key="Producer">
-          <string>Aspose Pty Ltd.</string>
-        </entry>
-        <entry key="Subject">
-          <string>Aspose</string>
-        </entry>
-        <entry key="Title">
-          <string>Aspose</string>
-        </entry>
-        <entry key="Creator">
-          <string>Aspose.Pdf.SvgToPdfConverter</string>
-        </entry>
-      </dict>
-    </object>
-    <object id="6" gen="0">
-      <stream>
-        <entry key="Filter">
-          <name>FlateDecode</name>
-        </entry>
-        <entry key="Length">
-          <num>8</num>
-        </entry>eJwDAAAAAAE=</stream>
-    </object>
-    <object id="7" gen="0">
-      <dict>
-        <entry key="Type">
-          <name>Page</name>
-        </entry>
-        <entry key="Parent">
-          <ref id="3" gen="0" />
-        </entry>
-        <entry key="MediaBox">
-          <arr>
-            <entry index="0">
-              <num>0</num>
-            </entry>
-            <entry index="1">
-              <num>0</num>
-            </entry>
-            <entry index="2">
-              <num>186</num>
-            </entry>
-            <entry index="3">
-              <num>245.25</num>
-            </entry>
-          </arr>
-        </entry>
-        <entry key="Contents">
-          <ref id="8" gen="0" />
-        </entry>
-        <entry key="Resources">
-          <dict />
-        </entry>
-        <entry key="CropBox">
-          <arr>
-            <entry index="0">
-              <num>0</num>
-            </entry>
-            <entry index="1">
-              <num>0</num>
-            </entry>
-            <entry index="2">
-              <num>186</num>
-            </entry>
-            <entry index="3">
-              <num>245.25</num>
-            </entry>
-          </arr>
-        </entry>
-      </dict>
-    </object>
-    <object id="8" gen="0">
-      <stream>
-        <entry key="Filter">
-          <name>FlateDecode</name>
-        </entry>
-        <entry key="Length">
-          <num>3140</num>
-        </entry>eJytmsmOI7kRhu/5FDobcIJLcHsCA76N5xEKGBuG6jC++PX9BXMRM5MqUVZPD6q7lL9Ixv5HMKc/J3sz/Pmr/uUkzC7cvr6nPyczlxJNyuJtvPFLiDm6JCnG4mwpST/bnpvoikt88z//nKwvc7AuhegBh8inOc/W8d3iXY6WH5YPv0GmOUYxxkoU1knhVszssgnGeVu8D0U/U1jKphQTjQl5+bD4WUpIwQj7SjQrsoB0xrriiwSv25TAaXzhP5/Lts3XNAy9T1bc7KKwXZYSbyXPxsYkMTh74+SzeM9v/Ci3kuYgnuNnk6JNNuuhJM9oxwUbcixW0BVbCcBsjFgk0OO8BnGQGHQzlrcluUW1Mc7F+my8fejmPWREOATINuZNEXw7IJJpv65L5lJctMKjW/RztsWVlIoJLvmqKxtljkbSQYroZhzGO/zHRxX1NUiP5WfPGcrhWG42IQq+kfG1KkNmTzvHoFpKeKO4qnOQOCBemouxPq6GiGaOyTi8hl0WBbANDpQTzuarW7zE3Icd/D79a/pj+u2DUJI0s5lHBIN8Oeu6uldBHdL46PeE+xAeuGDU5YqdrcVYIcYYbjwLBm9ENcamkOrh8C2kwZJIsGsIZ8YCxfF7CD5ZoirfSpwJR4dfb3b4mgaB90k8h3W4TOGPj1UzGiUppiShJAKpxLo1eicW0WCyhBJ2ixWorl+SeKJt8TGUbxASH8YEKkb9+tfU//w+OXRrQpEcURjqtRhMHTyyE1tF598AGfwRAUNKseos33BmIQctQoAQS1aSxEk3e+GLKEgzDf7ikoZKvjmcVoXiuIhMSKi4eHLmb1yIXRFpAMSpHGFJHiQ/2uysU83d8OKcjUu2WBudmkdPh05CTXl2M3rR5SzOYSyhoiG/IJGc1Y01XpA2lyyichB4IfBpYfPFxznkMPY+7M+fR04m2RUi05eYXCbVaJSmNKMpR1YUWfPOtyKT45Pg98DNloDnHDaTK4NU0+YyCyWARfESt6aZTBBpLSJ5Ga0bbfSvz76mn57eJ4IG53HY9yH+tiyK0UdLaeFQwbNMNeFSrvKcOSbeSC7yGjCISCKSZAAkX9VbTzAGrIdBOtyNrOBiWYJY7OxxJVK/kxx81eX72EyRkADaNoEsJFA8gdSptdfjwtiHqnCj4i8RpWWedHLI4/tDJPvpMfsSQCang3IfSxPOWe0St3xTzwRG/YsYq/FWLc/3MT3H32sCghJIHkfC6TjIAOg+7JSfu7/1UAeQnIMjrctqqSe+5cCjlIVRyh1+1pZarb9GoGaPGkfQziFgr10+Lb2ej7BYTDfSrqYrTgUv2HyK7DPDk6jWewarZXYYS7klbxUSqMABH0TDzwsRWYmf43eKDK5Qgt2IF/KSbrEnQnPwRTBWWx7ifvjjnoeWYz19qGU/UGHIXD6glzWMSLBQWI8MmLBytGFUZIcje9VM4V3JhPniq8p8DYXyQEghxrAzUqtzZhPKZwrPvr4i0F+Csxrxlez+9HxhNNQO1IkjbNrjNMnjbI643LWnZVrrcY3T1QsQDnoUyP92LeYK8wb5TaYk3KAic4ZpiEluZZPKeF9h7m+48echE5AMviRNaCrlhUC54CK1bKkD31NQcclcLEdXUK2iLJQyjKl8gTpWhwkyU1NhpF7MlrE1YIxmCSvUxhVXkwIMg6RZOCCVZSG1/Ar3aUjXKPI+BXSp//SQoY3w6Qmx0iGMNH5RP8bEGzaGf3A2iIRNyZ0DK1Pz0X7L4L+mcex91bbD/+GQa01couTQDr4HtFTrtVmqsZSB5C21w4JhUgIR4xg1BKgXJF6UtxDQROcZtMtEmwIh0tKlMNRIxWoYzygSvhNq5moLX65Hy1rrHpwWnJYpMjD1Yo8/ZSGkW7vVVipkIXEmr5FcKYguRhUjD9Dr7Nx8CHcfdfhfwMWUxWuFa/M6yYbiSG7LJCazFyMtkfppw8bQBxRJuWQyyi4rQyoEVzzmKxyNXpQO/fEZmkajSthJGgsCssJv6/NKzn5EwCHUNpdYAodTmlr46FLIWuSitrPWU3vDEdveRfsZx7KeKLaLCoKQMDiB3ScTAyBOJQSzULN9cDj9eqyiPRAmeRCJN3Dk9UPoI94shxBSthU0lDHMzhrxWMqRIfNhDqsqx+HxoMfk4ISoSn+B4UCQjVxOFfKEwgvwdAiJxGYhTs2vwCCni7zgcOh0NKHqwKvM9Kyr5sdw9zcc+sPg+cffJgq3LvTfyd3+PpnbvycYgUHAgho2RkNmI4oDXYZ3xNArBMqdM+zD1aNWRhTJDSe6M4KhFLKPsucmidTRE5kk5Lzz6lrs0enjy0QQlC5L5utl+9DSlUS00ZQPx6yF6BJD5ctKG15BYA2vIb//WpswWKFvsFurpuzWah2CcJllOrIw7REY5/+1MDhkOPVAtOYzxnAHXkU9EEvzXsTYPftbEjIpjWnGTi/4gGKnhYQubzF69TC4DiFR1m4BOjCEw4m0bmrRIYQZGtBbyFNhfv+oEJmzI3zXj4hb4WeBmcmWRiDIVCBiOmSinkinKbWWJk8LBdqwNG4aZslK05GfEF/TawwGYlaTvOdz7BNUMlXAEWWFhQpjpibfdM/dBZ5D6CXm3sVAxikHzKjbqXD38LQTqM+7pmT1NNGB9VXWAd6nrok6SNM/+cUZvqY//vJZ003JV5bHlPUxUr143BNU15iUFBibGILg6n+dNHd2v5cQzSKOKp9RnnKMJQuf9iFZQIkIQsYlz056wpw97qfH9/Pjrp91jtmxdUfgrpON4bSUHC3Q3bJnz64MA/7xsRNq1wD7gBQxt87rJoxYlSHRoiun3MoRUICHyRPMxnMy5lX2MWb0cGI5tPxdGH5BqjiNOTsbw/9GoZocaW91dOhhZfv0xzIo4tZJGk72BhDKf6K61pJMuOajx6BvJqnpyB5mA2/f+3nF0Bcxr9hKFxNvxl+xZTVXEL42AtMxV76y2Q+BdarjsBpVfZlYd6RgrCf4kGkVby1NpFL9w0Um67FYOq4XL52YztHGkGoN6LWBX3CddJg0cnGBLZsp4DgQeoaiaXaW5reGIy0k/9CLjmUordbjxlXrTDv/VSA9PQ3XMkXQtZhtn1o7j1dttv0RwGmQmsaL6HlkGuY4DW8bxzCj0TakTbuBmzTd+WAmbGe0ES6Zy9l1ukGczksCaQeuOAOXmmiJy7l9BgCSxHW6QhiG0jgwWWHERL+JsSAkeL9pp8aDCOZVqU1Negt/vieikSQHucM0sgfDqCiN+TAdR2c/MtILxH3S3K0XbOusuyv5EIa+VqfRUWPuocaLbeiPuFvnotHBqH60t86qCSwkbrLpyYFg4wMoTlc72/PrF7s3v35M9g3HTHKMKF1BKwfvEewddic4E96OMg7Dk2uwQxaHcPQYyKkDeO6q82NK3c1I70BpXYg0+urlWvdZ4gRHF5PPS54zMcZFBKbf/J+7peQVgtGEvqrC/WTL+D5AIZze0TBJ3FPuBZiZCun9c5tbj/UUBPMBEvehYJ1LM/OXIdx9nON8PrvsbqW1KGkFfsmnan1gnIT1maVslLHDqJ4Ae0Spu/sTUtXFosC0YJXjbNWZ8kp2D4f930Qi9fHSTLGEEtFuIjlgvXflwjNTdzPKfExv9eUKUY/Zv8ytNUd+jDcugHqx/TNkoQPcqbn1da3/G4IeGUyUhaV3MNw9EPh8dLgP51UL+mPmrySO5gaL1cgmZV9N6eZKRDRX//x84bqkARY8rAovhO80VxrvIenkOX1rPWBU+1Nog7vcqSvf4yqG2hmZ4uyjAVY8T8A1OTP/kcM9uUo8itWT+h6WWbDSw+YFgzeh2tcSvzjTHud620ncSHsAbQ70Igsa9OgzuOlHU6fMpcNqf5m9S80+fL0p9qqAYfCFP3GXrLPow43zOOjCs7R1Tc0d4xOe1YMdWVRvywvV6p+LN2BqYdVbaqJuzTx9bbyFVXJ4fC2yaztetvFQNKL4kUp7zgAuK+E7NiVX/6K2DSKrPB1kNxTegdIUYOpjC9QLW9Y8v0fRywPA0AuVs3lT5ppXkHsIB3fkPVo4E1e6lMBrynv1GC9Kze1mP++CQtKwL3JJ4rBTbhp1oqgv+nZLzktIvR7ClfXdFF6f2MdEHyN5X0Zf+miu3jpIWBBlHuOfZn6XKgywQ2y6tR0jjoOfsLMnRGShZ7/9D0IJTyw=</stream>
-    </object>
-  </objects>
-  <trailer>
-    <dict>
-      <entry key="Root">
-        <ref id="1" gen="0" />
-      </entry>
-      <entry key="Info">
-        <ref id="4" gen="0" />
-      </entry>
-      <entry key="ID">
-        <arr>
-          <entry index="0">
-            <string>72-5A-0D-6C-9F-3</string>
-          </entry>
-          <entry index="1">
-            <string>72-5A-0D-6C-9F-3</string>
-          </entry>
-        </arr>
-      </entry>
-      <entry key="Size">
-        <num>7</num>
-      </entry>
-    </dict>
-  </trailer>
-</document>
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="248dp"
+    android:height="327dp"
+    android:viewportWidth="248"
+    android:viewportHeight="327">
+  <path
+      android:pathData="M186.02,117.5C183.55,120.37 183.71,124.66 186.38,127.35C189.69,130.69 195.24,130.06 197.72,126.06L220.58,89.22C221.68,87.43 221.2,85.09 219.47,83.9C217.81,82.74 215.54,83.03 214.23,84.57L186.02,117.5Z"
+      android:fillColor="#FEF4F5"/>
+  <path
+      android:pathData="M62.85,118.57C65.21,121.49 64.67,125.78 61.68,128.03C58.58,130.36 54.15,129.53 52.09,126.25L27.87,87.59C26.8,85.87 27.23,83.61 28.86,82.41C30.53,81.17 32.88,81.47 34.18,83.09L62.85,118.57Z"
+      android:fillColor="#FEF4F5"/>
+  <path
+      android:pathData="M116,103.97C115.63,108.57 119.26,112.5 123.87,112.5C128.4,112.5 131.99,108.71 131.76,104.2L129.26,55.07C129.14,52.58 127.08,50.63 124.59,50.63C122.14,50.63 120.11,52.5 119.92,54.94L116,103.97Z"
+      android:fillColor="#FEF4F5"/>
+  <path
+      android:pathData="M179.42,221.46C178.43,217.39 174.08,215.14 170.19,216.7C166.55,218.15 164.86,222.37 166.5,225.93L180.08,255.55C180.86,257.24 182.77,258.1 184.55,257.55C186.43,256.98 187.53,255.04 187.07,253.13L179.42,221.46Z"
+      android:fillColor="#FEF4F5"/>
+  <path
+      android:pathData="M67.54,220.89C68.37,217.08 72.26,214.78 76,215.91C79.78,217.05 81.74,221.2 80.24,224.85L67.54,255.55C66.81,257.31 64.87,258.23 63.05,257.67C61.21,257.11 60.12,255.24 60.52,253.36L67.54,220.89Z"
+      android:fillColor="#FEF4F5"/>
+  <path
+      android:pathData="M116.21,232.28C115.88,228.39 118.93,225.05 122.83,225.04C126.78,225.02 129.88,228.41 129.51,232.34L126.38,265.42C126.2,267.31 124.61,268.76 122.7,268.76C120.79,268.76 119.19,267.29 119.03,265.38L116.21,232.28Z"
+      android:fillColor="#FEF4F5"/>
+  <path
+      android:pathData="M9.34,171.53L13.15,166.14C68.93,87.24 187.09,90.7 238.16,172.72V172.72"
+      android:strokeWidth="11.25"
+      android:fillColor="#00000000"
+      android:strokeColor="#FEF4F5"
+      android:strokeLineCap="round"/>
+  <path
+      android:pathData="M240.49,169.52V169.52C183.45,247.67 67.22,248.78 8.69,171.74L7,169.52"
+      android:strokeWidth="11.25"
+      android:fillColor="#00000000"
+      android:strokeColor="#FEF4F5"
+      android:strokeLineCap="round"/>
+  <path
+      android:pathData="M0,172.72a9.34,12.79 0,1 0,18.68 0a9.34,12.79 0,1 0,-18.68 0z"
+      android:fillColor="#FEF4F5"/>
+  <path
+      android:pathData="M228.82,172.72a9.34,12.79 0,1 0,18.68 0a9.34,12.79 0,1 0,-18.68 0z"
+      android:fillColor="#FEF4F5"/>
+  <path
+      android:pathData="M121.88,118.26C122.47,116.45 125.03,116.45 125.62,118.26L135.94,150.01C136.2,150.82 136.96,151.37 137.81,151.37H171.19C173.1,151.37 173.89,153.81 172.35,154.93L145.34,174.55C144.65,175.05 144.36,175.94 144.63,176.75L154.94,208.49C155.53,210.31 153.45,211.82 151.91,210.7L124.91,191.08C124.22,190.57 123.28,190.57 122.59,191.08L95.59,210.7C94.05,211.82 91.97,210.31 92.56,208.49L102.87,176.75C103.14,175.94 102.85,175.05 102.16,174.55L75.16,154.93C73.61,153.81 74.41,151.37 76.31,151.37H109.69C110.54,151.37 111.3,150.82 111.56,150.01L121.88,118.26Z"
+      android:fillColor="#FEF4F5"/>
+  <path
+      android:pathData="M121.88,146.39C122.47,144.57 125.03,144.57 125.62,146.39L129.62,158.7C129.89,159.51 130.64,160.06 131.49,160.06H144.44C146.35,160.06 147.14,162.5 145.6,163.62L135.12,171.23C134.43,171.73 134.15,172.62 134.41,173.43L138.41,185.74C139,187.55 136.92,189.06 135.38,187.94L124.91,180.33C124.22,179.83 123.28,179.83 122.59,180.33L112.12,187.94C110.58,189.06 108.5,187.55 109.09,185.74L113.09,173.43C113.36,172.62 113.07,171.73 112.38,171.23L101.9,163.62C100.36,162.5 101.15,160.06 103.06,160.06H116C116.86,160.06 117.61,159.51 117.88,158.7L121.88,146.39Z"
+      android:fillColor="#FEF4F5"/>
+</vector>
