@@ -29,7 +29,7 @@
     <color name="inverseSurface">#34302A</color>
     <color name="inversePrimary">#FBBB4A</color>
     <color name="shadow">#000000</color>
-    <color name="surfaceTint">#7E5700</color>
+    <color name="surfaceTint">#FFDBD1</color>
     <color name="outlineVariant">#D2C4B4</color>
     <color name="scrim">#000000</color>
 
