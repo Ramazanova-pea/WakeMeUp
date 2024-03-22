@@ -1,16 +1,15 @@
 package com.example.wakemeup.ui.friends
 
-import android.graphics.drawable.Drawable
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.TextView
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.wakemeup.R
 import com.example.wakemeup.databinding.FragmentFriendsBinding
+import com.example.wakemeup.domain.FriendModel
 import java.util.Calendar
 
 class FriendsFragment : Fragment() {
@@ -47,7 +46,7 @@ class FriendsFragment : Fragment() {
                     phoneNumber="1234567890",
                     isAwake=false,
                     wakingTime= Calendar.getInstance(),
-                    profilePic= resources.getDrawable(R.drawable.ic_launcher_foreground),
+                    profilePic= resources.getDrawable(R.drawable.account_circle_24px),
                     notes="This is a note"
                 ),
                 FriendModel(
