@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "775777893155",
+    "project_id": "wake-me-up-rkz",
+    "storage_bucket": "wake-me-up-rkz.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:775777893155:android:e4556c99aa566f0e5e6a96",
+        "android_client_info": {
+          "package_name": "com.example.wakemeup"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyChUjU80EeRnFg80Dz3Z2UX7V8qGIV0qFU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
