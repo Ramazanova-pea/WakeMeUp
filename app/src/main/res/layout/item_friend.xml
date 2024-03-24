@@ -51,7 +51,7 @@
             android:id="@+id/wake_up_status"
             android:layout_width="24dp"
             android:layout_height="wrap_content"
-            android:src="@drawable/open_eye"
+            android:src="@drawable/closed_eye"
             android:tint="@color/md_theme_onSurfaceVariant_mediumContrast"
             app:layout_constraintBottom_toBottomOf="@+id/status_background"
             app:layout_constraintEnd_toEndOf="@+id/status_background"
