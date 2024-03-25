@@ -112,20 +112,36 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="25dp"
         android:text="@string/signupButton"
-        app:layout_constraintBottom_toTopOf="@id/proceed"
+        app:layout_constraintBottom_toTopOf="@id/proceedText"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/inputPasswordRepeat" />
 
     <TextView
-        android:id="@+id/proceed"
+        android:id="@+id/proceedText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="25dp"
         android:text="@string/proceedToLogin"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/proceedButton"
+        app:layout_constraintHorizontal_chainStyle="packed"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/signupButton" />
+
+    <Button
+        android:id="@+id/proceedButton"
+        style="@style/Widget.Material3.Button.TextButton"
+        android:layout_width="wrap_content"
+        android:minWidth="0dp"
+        android:layout_height="wrap_content"
+        android:paddingStart="4dp"
+        android:padding="0dp"
+        android:text="@string/loginButton"
+        android:textAlignment="textStart"
+        app:layout_constraintBottom_toBottomOf="@id/proceedText"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/proceedText"
+        app:layout_constraintTop_toTopOf="@id/proceedText" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
