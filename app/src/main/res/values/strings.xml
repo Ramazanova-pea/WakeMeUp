@@ -3,4 +3,10 @@
     <string name="title_alarms">Alarms</string>
     <string name="title_friends">Friends</string>
     <string name="title_rooms">Rooms</string>
+    <string name="signup">Регистрация</string>
+    <string name="name">Имя</string>
+    <string name="login">Логин</string>
+    <string name="password">Пароль</string>
+    <string name="signupButton">Зарегистрироваться</string>
+    <string name="proceedToLogin">Уже есть аккаунт? Войти!</string>
 </resources>
