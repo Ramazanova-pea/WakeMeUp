@@ -8,5 +8,9 @@
     <string name="login">Логин</string>
     <string name="password">Пароль</string>
     <string name="signupButton">Зарегистрироваться</string>
-    <string name="proceedToLogin">Уже есть аккаунт? Войти!</string>
+    <string name="proceedToLogin">Уже есть аккаунт? </string>
+    <string name="loginButton">Войти!</string>
+    <string name="loginText">Вход</string>
+    <string name="loginButton_loginFragment">Войти</string>
+    <string name="proceedToSignup">Ещё нет аккаунта?</string>
 </resources>
