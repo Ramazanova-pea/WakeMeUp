@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -16,14 +15,14 @@
         android:textColor="@color/md_theme_onSurface"
         android:textSize="24sp"
         android:textStyle="bold"
-        app:layout_constraintBottom_toTopOf="@id/inputName_signupFragment"
+        app:layout_constraintBottom_toTopOf="@id/inputNameLayout"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_chainStyle="packed" />
 
     <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/inputName_signupFragment"
+        android:id="@+id/inputNameLayout"
         style="?attr/textInputFilledStyle"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -31,19 +30,20 @@
         android:layout_marginTop="25dp"
         android:layout_marginEnd="48dp"
         android:hint="@string/name"
-        app:layout_constraintBottom_toTopOf="@id/inputLogin_signupFragment"
+        app:layout_constraintBottom_toTopOf="@id/inputLoginLayout"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/signupText_signupFragment">
 
         <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/inputName"
             android:layout_width="match_parent"
             android:layout_height="wrap_content" />
 
     </com.google.android.material.textfield.TextInputLayout>
 
     <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/inputLogin_signupFragment"
+        android:id="@+id/inputLoginLayout"
         style="?attr/textInputFilledStyle"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -51,41 +51,20 @@
         android:layout_marginTop="16dp"
         android:layout_marginEnd="48dp"
         android:hint="@string/login"
-        app:layout_constraintBottom_toTopOf="@id/inputPassword_signupFragment"
+        app:layout_constraintBottom_toTopOf="@id/inputPasswordLayout"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/inputName_signupFragment">
+        app:layout_constraintTop_toBottomOf="@+id/inputNameLayout">
 
         <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/inputLogin"
             android:layout_width="match_parent"
             android:layout_height="wrap_content" />
 
     </com.google.android.material.textfield.TextInputLayout>
 
     <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/inputPassword_signupFragment"
-        style="?attr/textInputFilledStyle"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="48dp"
-        android:layout_marginTop="16dp"
-        android:layout_marginEnd="48dp"
-        android:hint="@string/password"
-        app:endIconDrawable="@drawable/open_eye"
-        app:endIconMode="custom"
-        app:layout_constraintBottom_toTopOf="@id/inputPasswordRepeat_signupFragment"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/inputLogin_signupFragment">
-
-        <com.google.android.material.textfield.TextInputEditText
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
-
-    </com.google.android.material.textfield.TextInputLayout>
-
-    <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/inputPasswordRepeat_signupFragment"
+        android:id="@+id/inputPasswordLayout"
         style="?attr/textInputFilledStyle"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -95,19 +74,45 @@
         android:hint="@string/password"
         app:endIconDrawable="@drawable/closed_eye"
         app:endIconMode="custom"
-        app:layout_constraintBottom_toTopOf="@id/signupButton_signupFragment"
+        app:layout_constraintBottom_toTopOf="@id/inputPasswordRepeatLayout"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/inputPassword_signupFragment">
+        app:layout_constraintTop_toBottomOf="@+id/inputLoginLayout">
 
         <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/inputPassword"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
+            android:layout_height="wrap_content"
+            android:inputType="textPassword" />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/inputPasswordRepeatLayout"
+        style="?attr/textInputFilledStyle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="48dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="48dp"
+        android:hint="@string/password"
+        app:endIconDrawable="@drawable/closed_eye"
+        app:endIconMode="custom"
+        app:layout_constraintBottom_toTopOf="@id/signupButton"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/inputPasswordLayout">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/inputPasswordRepeat"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="textPassword" />
 
     </com.google.android.material.textfield.TextInputLayout>
 
     <Button
-        android:id="@+id/signupButton_signupFragment"
+        android:id="@+id/signupButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="25dp"
@@ -115,7 +120,7 @@
         app:layout_constraintBottom_toTopOf="@id/proceedText_signupFragment"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/inputPasswordRepeat_signupFragment" />
+        app:layout_constraintTop_toBottomOf="@id/inputPasswordRepeatLayout" />
 
     <TextView
         android:id="@+id/proceedText_signupFragment"
@@ -127,16 +132,16 @@
         app:layout_constraintEnd_toStartOf="@id/proceedButton_signupFragment"
         app:layout_constraintHorizontal_chainStyle="packed"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/signupButton_signupFragment" />
+        app:layout_constraintTop_toBottomOf="@id/signupButton" />
 
     <Button
         android:id="@+id/proceedButton_signupFragment"
         style="@style/Widget.Material3.Button.TextButton"
         android:layout_width="wrap_content"
-        android:minWidth="0dp"
         android:layout_height="wrap_content"
-        android:paddingStart="4dp"
+        android:minWidth="0dp"
         android:padding="0dp"
+        android:paddingStart="4dp"
         android:text="@string/loginButton"
         android:textAlignment="textStart"
         app:layout_constraintBottom_toBottomOf="@id/proceedText_signupFragment"
