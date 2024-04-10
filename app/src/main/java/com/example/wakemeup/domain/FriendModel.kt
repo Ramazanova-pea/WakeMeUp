@@ -1,4 +1,4 @@
-package com.example.wakemeup.ui.friends
+package com.example.wakemeup.domain
 
 import android.graphics.drawable.Drawable
 import java.util.Calendar
