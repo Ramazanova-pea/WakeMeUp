@@ -33,6 +33,9 @@
         <action
             android:id="@+id/action_loginFragment_to_navigation_friends"
             app:destination="@id/navigation_friends" />
+        <action
+            android:id="@+id/action_loginFragment_to_signupFragment2"
+            app:destination="@id/signupFragment" />
     </fragment>
     <fragment
         android:id="@+id/signupFragment"
@@ -45,5 +48,8 @@
         <action
             android:id="@+id/action_signupFragment_to_navigation_friends"
             app:destination="@id/navigation_friends" />
+        <action
+            android:id="@+id/action_signupFragment_to_loginFragment2"
+            app:destination="@id/loginFragment" />
     </fragment>
 </navigation>

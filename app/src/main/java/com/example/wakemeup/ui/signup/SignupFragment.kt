@@ -9,6 +9,8 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
+import androidx.navigation.fragment.NavHostFragment
+import androidx.navigation.fragment.findNavController
 import com.example.wakemeup.R
 import com.example.wakemeup.databinding.FragmentSignupBinding
 import com.google.android.material.snackbar.Snackbar
@@ -36,7 +38,11 @@ class SignupFragment : Fragment() {
 
         viewModel.registrationState.observe(viewLifecycleOwner) { state ->
             when (state) {
-                RegistrationState.SUCCESS -> Log.d("SignupFragment", "User created successfully")
+                RegistrationState.SUCCESS -> {
+                    Log.d("SignupFragment", "User created successfully")
+                    findNavController().navigate(R.id.action_signupFragment_to_navigation_friends)
+
+                }
                 RegistrationState.ERROR_USER_ALREADY_EXISTS -> setError(binding.inputLoginLayout, "User with this login already exists")
                 RegistrationState.ERROR_WEAK_PASSWORD -> setError(binding.inputPasswordLayout, "Password is too weak")
                 RegistrationState.ERROR_INVALID_CREDENTIALS -> setError(binding.inputLoginLayout, "Invalid credentials")
@@ -63,6 +69,10 @@ class SignupFragment : Fragment() {
                     viewModel.onSignUpClick(name, login, password)
                 }
             }
+        }
+
+        binding.proceedButtonSignupFragment.setOnClickListener {
+            findNavController().navigate(R.id.action_signupFragment_to_loginFragment)
         }
 
 //        binding.inputLogin.addTextChangedListener(viewModel.loginTextWatcher)
