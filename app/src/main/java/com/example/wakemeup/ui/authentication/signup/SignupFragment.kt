@@ -19,11 +19,19 @@ import com.google.android.material.snackbar.Snackbar
 import com.google.android.material.textfield.TextInputEditText
 import com.google.android.material.textfield.TextInputLayout
 
+/**
+ * This is the SignupFragment class which is responsible for the user registration process.
+ * It handles user input validation and communicates with the SignupViewModel to perform the registration.
+ */
 class SignupFragment : Fragment() {
 
     private lateinit var binding: FragmentSignupBinding
     private lateinit var viewModel: SignupViewModel
 
+    /**
+     * This method is called to do initial creation of a fragment.
+     * This is where you should do all of your normal static set up to create views, bind data to lists, and so on.
+     */
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
@@ -37,7 +45,7 @@ class SignupFragment : Fragment() {
 
         setupEditTexts()
 
-
+        // Observing the registration state
         viewModel.registrationState.observe(viewLifecycleOwner) { state ->
             when (state) {
                 RegistrationState.SUCCESS -> {
@@ -52,7 +60,7 @@ class SignupFragment : Fragment() {
             }
         }
 
-
+        // Setting up the click listener for the signup button
         binding.signupButton.setOnClickListener {
             val name = binding.inputName.text.toString()
             val login = binding.inputLogin.text.toString()
@@ -68,19 +76,24 @@ class SignupFragment : Fragment() {
                 if (password != passwordConfirm) {
                     setError(binding.inputPasswordRepeatLayout, "Passwords do not match")
                 } else {
-                    viewModel.onSignUpClick(name, login, password)
+                    viewModel.onSignUpClick(name, login, password, requireContext())
                 }
             }
         }
 
+        // Why the button is called "Proceed"?
+        // @peterkrglv, @RamazanovaMO???
+        // Setting up the click listener for the proceed button
         binding.proceedButtonSignupFragment.setOnClickListener {
             (activity as? MainActivity)?.goToLogin()
         }
 
-//        binding.inputLogin.addTextChangedListener(viewModel.loginTextWatcher)
         return binding.root
     }
 
+    /**
+     * This method sets up the click listener for the eye icon in the password fields.
+     */
     private fun setupEyeIconClick(layout: TextInputLayout) {
         layout.setEndIconOnClickListener {
             val isPasswordVisible = layout.editText?.inputType == 129
@@ -98,6 +111,9 @@ class SignupFragment : Fragment() {
         }
     }
 
+    /**
+     * This method sets up the text watchers for the input fields.
+     */
     fun setEditText(layout: TextInputLayout, editText: TextInputEditText) {
         editText.addTextChangedListener(object : TextWatcher {
             override fun afterTextChanged(s: Editable?) {
@@ -114,6 +130,9 @@ class SignupFragment : Fragment() {
         })
     }
 
+    /**
+     * This method sets up the text watchers for all the input fields.
+     */
     private fun setupEditTexts() {
         setEditText(binding.inputNameLayout, binding.inputName)
         setEditText(binding.inputLoginLayout, binding.inputLogin)
@@ -121,6 +140,9 @@ class SignupFragment : Fragment() {
         setEditText(binding.inputPasswordRepeatLayout, binding.inputPasswordRepeat)
     }
 
+    /**
+     * This method sets the error message for a TextInputLayout.
+     */
     private fun setError(layout: TextInputLayout, error: String) {
         layout.error = error
     }

@@ -1,5 +1,6 @@
 package com.example.wakemeup.ui.authentication.signup
 
+import android.content.Context
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import com.google.firebase.auth.FirebaseAuth
@@ -12,7 +13,8 @@ class SignupViewModel : ViewModel() {
     private val _registrationState = MutableLiveData<RegistrationState>()
     val registrationState: MutableLiveData<RegistrationState>
         get() = _registrationState
-    fun onSignUpClick(name: String, email: String, password: String) {
+
+    fun onSignUpClick(name: String, email: String, password: String, context: Context) {
         FirebaseAuth.getInstance().createUserWithEmailAndPassword(email, password)
             .addOnCompleteListener { task ->
                 if (task.isSuccessful) {
@@ -21,10 +23,13 @@ class SignupViewModel : ViewModel() {
                     when (task.exception) {
                         is FirebaseAuthUserCollisionException -> _registrationState.value =
                             RegistrationState.ERROR_USER_ALREADY_EXISTS
+
                         is FirebaseAuthWeakPasswordException -> _registrationState.value =
                             RegistrationState.ERROR_WEAK_PASSWORD
+
                         is FirebaseAuthInvalidCredentialsException -> _registrationState.value =
                             RegistrationState.ERROR_INVALID_CREDENTIALS
+
                         else -> _registrationState.value = RegistrationState.ERROR
                     }
                 }

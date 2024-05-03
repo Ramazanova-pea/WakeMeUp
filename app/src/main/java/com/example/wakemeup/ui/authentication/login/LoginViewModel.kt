@@ -1,5 +1,6 @@
 package com.example.wakemeup.ui.authentication.login
 
+import android.content.Context
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import com.google.firebase.auth.FirebaseAuth
@@ -11,7 +12,7 @@ class LoginViewModel : ViewModel() {
     val loginState: MutableLiveData<LoginState>
         get() = _loginState
 
-    fun onLoginClick(email: String, password: String) {
+    fun onLoginClick(email: String, password: String, context: Context) {
         FirebaseAuth.getInstance().signInWithEmailAndPassword(email, password).addOnCompleteListener { task ->
             if (task.isSuccessful) {
                 _loginState.value = LoginState.SUCCESS

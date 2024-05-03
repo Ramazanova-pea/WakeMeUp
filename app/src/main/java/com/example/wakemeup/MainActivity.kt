@@ -14,6 +14,7 @@ import com.example.wakemeup.databinding.ActivityMainBinding
 import com.example.wakemeup.ui.authentication.AuthenticationStateAdapter
 import com.example.wakemeup.ui.authentication.AuthenticationViewPagerFragment
 import com.example.wakemeup.ui.authentication.login.LoginFragment
+import com.google.firebase.auth.FirebaseAuth
 
 class MainActivity : AppCompatActivity() {
 
@@ -43,6 +44,10 @@ class MainActivity : AppCompatActivity() {
 
                 else -> navView.visibility = View.GONE
             }
+        }
+
+        if (FirebaseAuth.getInstance().currentUser != null) {
+            navController.navigate(R.id.navigation_friends)
         }
 
         navView.setupWithNavController(navController)

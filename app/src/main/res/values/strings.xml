@@ -13,4 +13,6 @@
     <string name="loginText">Вход</string>
     <string name="loginButton_loginFragment">Войти</string>
     <string name="proceedToSignup">Ещё нет аккаунта?</string>
+    <string name="change_theme">Change theme</string>
+    <string name="log_out">log out</string>
 </resources>

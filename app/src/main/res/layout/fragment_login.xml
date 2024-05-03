@@ -89,6 +89,9 @@
         app:layout_constraintTop_toBottomOf="@+id/loginButton"
         app:layout_constraintEnd_toEndOf="parent"/>
 
+    <!-- Why this button is called "proceedButton" and not "signupButton"? -->
+    <!-- @peterkrglv ??? -->
+    <!-- @RamazanovaMO ??? -->
     <Button
         android:id="@+id/proceedButton_loginFragment"
         style="@style/Widget.Material3.Button.TextButton"
