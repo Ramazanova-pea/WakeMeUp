@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/md_theme_surfaceContainerLow"
-    tools:context=".ui.signup.SignupFragment">
+    tools:context=".ui.authentication.signup.SignupFragment">
 
     <TextView
         android:id="@+id/signupText_signupFragment"

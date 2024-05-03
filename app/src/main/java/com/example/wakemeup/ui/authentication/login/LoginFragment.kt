@@ -1,5 +1,6 @@
-package com.example.wakemeup.ui.login
+package com.example.wakemeup.ui.authentication.login
 
+import android.content.res.Resources.Theme
 import android.os.Bundle
 import android.text.Editable
 import android.text.TextWatcher
@@ -7,11 +8,14 @@ import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.core.content.res.ResourcesCompat
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.findNavController
+import com.example.wakemeup.MainActivity
 import com.example.wakemeup.R
 import com.example.wakemeup.databinding.FragmentLoginBinding
+import com.example.wakemeup.ui.authentication.AuthenticationViewPagerFragment
 import com.google.android.material.snackbar.Snackbar
 import com.google.android.material.textfield.TextInputEditText
 import com.google.android.material.textfield.TextInputLayout
@@ -27,7 +31,7 @@ class LoginFragment : Fragment() {
         savedInstanceState: Bundle?,
     ): View? {
         binding = FragmentLoginBinding.inflate(inflater, container, false)
-        val viewModel = ViewModelProvider(this)[LoginViewModel::class.java]
+        viewModel = ViewModelProvider(this)[LoginViewModel::class.java]
 
         setupEyeIconClick(binding.inputPasswordLayout2)
         setupEditTexts()
@@ -37,7 +41,7 @@ class LoginFragment : Fragment() {
             when(state) {
                 LoginState.SUCCESS -> {
                     Log.d("LoginFragment", "Logged in successfully")
-                    findNavController().navigate(R.id.action_loginFragment_to_navigation_friends)
+                    findNavController().navigate(R.id.action_authenticationViewPagerFragment_to_navigation_friends)
 
                 }
                 LoginState.ERROR_USER_DOESNT_EXIST -> setError(binding.inputLoginLayout2, "User with this login doesn't exist")
@@ -60,7 +64,7 @@ class LoginFragment : Fragment() {
         }
 
         binding.proceedButtonLoginFragment.setOnClickListener {
-            findNavController().navigate(R.id.action_loginFragment_to_signupFragment)
+            (activity as? MainActivity)?.goToSignup()
         }
 
         return binding.root
@@ -69,7 +73,16 @@ class LoginFragment : Fragment() {
     private fun setupEyeIconClick(layout: TextInputLayout) {
         layout.setEndIconOnClickListener {
             val isPasswordVisible = layout.editText?.inputType == 129
-            layout.endIconDrawable = resources.getDrawable(if (isPasswordVisible) R.drawable.open_eye else R.drawable.closed_eye)
+            layout.endIconDrawable = ResourcesCompat.getDrawable(
+                resources,
+                if (isPasswordVisible) {
+                    R.drawable.open_eye
+                }
+                else {
+                    R.drawable.closed_eye
+                },
+                null
+            )
             layout.editText?.inputType = if (isPasswordVisible) 145 else 129
         }
     }
