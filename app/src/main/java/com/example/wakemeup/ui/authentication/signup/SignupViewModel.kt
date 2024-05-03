@@ -1,4 +1,4 @@
-package com.example.wakemeup.ui.signup
+package com.example.wakemeup.ui.authentication.signup
 
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
@@ -19,9 +19,12 @@ class SignupViewModel : ViewModel() {
                     _registrationState.value = RegistrationState.SUCCESS
                 } else {
                     when (task.exception) {
-                        is FirebaseAuthUserCollisionException -> _registrationState.value = RegistrationState.ERROR_USER_ALREADY_EXISTS
-                        is FirebaseAuthWeakPasswordException -> _registrationState.value = RegistrationState.ERROR_WEAK_PASSWORD
-                        is FirebaseAuthInvalidCredentialsException -> _registrationState.value = RegistrationState.ERROR_INVALID_CREDENTIALS
+                        is FirebaseAuthUserCollisionException -> _registrationState.value =
+                            RegistrationState.ERROR_USER_ALREADY_EXISTS
+                        is FirebaseAuthWeakPasswordException -> _registrationState.value =
+                            RegistrationState.ERROR_WEAK_PASSWORD
+                        is FirebaseAuthInvalidCredentialsException -> _registrationState.value =
+                            RegistrationState.ERROR_INVALID_CREDENTIALS
                         else -> _registrationState.value = RegistrationState.ERROR
                     }
                 }

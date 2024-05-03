@@ -1,4 +1,4 @@
-package com.example.wakemeup.ui.login
+package com.example.wakemeup.ui.authentication.login
 
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
@@ -17,8 +17,10 @@ class LoginViewModel : ViewModel() {
                 _loginState.value = LoginState.SUCCESS
             } else {
                 when(task.exception) {
-                    is FirebaseAuthInvalidUserException -> _loginState.value = LoginState.ERROR_USER_DOESNT_EXIST
-                    is FirebaseAuthInvalidCredentialsException -> _loginState.value = LoginState.ERROR_WRONG_PASSWORD
+                    is FirebaseAuthInvalidUserException -> _loginState.value =
+                        LoginState.ERROR_USER_DOESNT_EXIST
+                    is FirebaseAuthInvalidCredentialsException -> _loginState.value =
+                        LoginState.ERROR_WRONG_PASSWORD
                     else -> _loginState.value = LoginState.ERROR
                 }
             }

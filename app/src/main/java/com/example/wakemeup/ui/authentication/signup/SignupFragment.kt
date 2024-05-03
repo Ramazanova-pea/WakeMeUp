@@ -1,4 +1,4 @@
-package com.example.wakemeup.ui.signup
+package com.example.wakemeup.ui.authentication.signup
 
 import android.os.Bundle
 import android.text.Editable
@@ -7,12 +7,14 @@ import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.core.content.res.ResourcesCompat
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
-import androidx.navigation.fragment.NavHostFragment
 import androidx.navigation.fragment.findNavController
+import com.example.wakemeup.MainActivity
 import com.example.wakemeup.R
 import com.example.wakemeup.databinding.FragmentSignupBinding
+import com.example.wakemeup.ui.authentication.AuthenticationViewPagerFragment
 import com.google.android.material.snackbar.Snackbar
 import com.google.android.material.textfield.TextInputEditText
 import com.google.android.material.textfield.TextInputLayout
@@ -40,7 +42,7 @@ class SignupFragment : Fragment() {
             when (state) {
                 RegistrationState.SUCCESS -> {
                     Log.d("SignupFragment", "User created successfully")
-                    findNavController().navigate(R.id.action_signupFragment_to_navigation_friends)
+                    findNavController().navigate(R.id.action_authenticationViewPagerFragment_to_navigation_friends)
 
                 }
                 RegistrationState.ERROR_USER_ALREADY_EXISTS -> setError(binding.inputLoginLayout, "User with this login already exists")
@@ -72,7 +74,7 @@ class SignupFragment : Fragment() {
         }
 
         binding.proceedButtonSignupFragment.setOnClickListener {
-            findNavController().navigate(R.id.action_signupFragment_to_loginFragment)
+            (activity as? MainActivity)?.goToLogin()
         }
 
 //        binding.inputLogin.addTextChangedListener(viewModel.loginTextWatcher)
@@ -82,7 +84,16 @@ class SignupFragment : Fragment() {
     private fun setupEyeIconClick(layout: TextInputLayout) {
         layout.setEndIconOnClickListener {
             val isPasswordVisible = layout.editText?.inputType == 129
-            layout.endIconDrawable = resources.getDrawable(if (isPasswordVisible) R.drawable.open_eye else R.drawable.closed_eye)
+            layout.endIconDrawable = ResourcesCompat.getDrawable(
+                resources,
+                if (isPasswordVisible) {
+                    R.drawable.open_eye
+                }
+                else {
+                    R.drawable.closed_eye
+                },
+                null
+            )
             layout.editText?.inputType = if (isPasswordVisible) 145 else 129
         }
     }
