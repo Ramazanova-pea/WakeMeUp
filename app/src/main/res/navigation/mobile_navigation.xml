@@ -15,7 +15,11 @@
         android:id="@+id/navigation_friends"
         android:name="com.example.wakemeup.ui.friends.FriendsFragment"
         android:label="@string/title_friends"
-        tools:layout="@layout/fragment_friends" />
+        tools:layout="@layout/fragment_friends" >
+        <action
+            android:id="@+id/action_navigation_friends_to_settingsFragment"
+            app:destination="@id/settingsFragment" />
+    </fragment>
 
     <fragment
         android:id="@+id/navigation_rooms"
@@ -31,4 +35,9 @@
             android:id="@+id/action_authenticationViewPagerFragment_to_navigation_friends"
             app:destination="@id/navigation_friends" />
     </fragment>
+    <fragment
+        android:id="@+id/settingsFragment"
+        android:name="com.example.wakemeup.ui.settings.SettingsFragment"
+        android:label="fragment_settings"
+        tools:layout="@layout/fragment_settings" />
 </navigation>

@@ -4,8 +4,10 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.appcompat.app.AppCompatDelegate
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
+import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.wakemeup.R
 import com.example.wakemeup.databinding.FragmentFriendsBinding
@@ -31,6 +33,28 @@ class FriendsFragment : Fragment() {
         _binding = FragmentFriendsBinding.inflate(inflater, container, false)
         val root: View = binding.root
 
+        binding.topAppBar.setNavigationOnClickListener {
+            findNavController().navigate(R.id.action_navigation_friends_to_settingsFragment)
+        }
+
+        binding.topAppBar.setOnMenuItemClickListener { menuItem ->
+            when (menuItem.itemId) {
+                R.id.change_theme -> {
+                    when (resources.configuration.uiMode and android.content.res.Configuration.UI_MODE_NIGHT_MASK) {
+                        android.content.res.Configuration.UI_MODE_NIGHT_YES -> {
+                            AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO)
+                        }
+                        android.content.res.Configuration.UI_MODE_NIGHT_NO -> {
+                            AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES)
+                        }
+                    }
+
+                    true
+                }
+
+                else -> false
+            }
+        }
         val friendsAdapter = FriendsAdapter(
             arrayListOf(
                 FriendModel(
@@ -70,12 +94,6 @@ class FriendsFragment : Fragment() {
 
         binding.friendsRecyclerView.adapter = friendsAdapter
         binding.friendsRecyclerView.layoutManager = LinearLayoutManager(context)
-
-        // Example of a LiveData object
-//        val textView: TextView = binding.textFriends
-//        friendsViewModel.text.observe(viewLifecycleOwner) {
-//            textView.text = it
-//        }
 
         return root
     }
