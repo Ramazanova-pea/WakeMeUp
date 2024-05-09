@@ -14,6 +14,7 @@ import com.example.wakemeup.databinding.ActivityMainBinding
 import com.example.wakemeup.ui.authentication.AuthenticationStateAdapter
 import com.example.wakemeup.ui.authentication.AuthenticationViewPagerFragment
 import com.example.wakemeup.ui.authentication.login.LoginFragment
+import com.google.android.material.snackbar.Snackbar
 import com.google.firebase.auth.FirebaseAuth
 
 class MainActivity : AppCompatActivity() {
@@ -29,7 +30,7 @@ class MainActivity : AppCompatActivity() {
 
         val navView: BottomNavigationView = binding.navView
         val navHostFragment =
-            supportFragmentManager.findFragmentById(R.id.nav_host_fragment_activity_main)!! as NavHostFragment
+             supportFragmentManager.findFragmentById(R.id.nav_host_fragment_activity_main)!! as NavHostFragment
         navController = navHostFragment.navController
         val appBarConfiguration = AppBarConfiguration(
             setOf(
@@ -46,9 +47,17 @@ class MainActivity : AppCompatActivity() {
             }
         }
 
-        if (FirebaseAuth.getInstance().currentUser != null) {
-            navController.navigate(R.id.navigation_friends)
+        if (isNetworkAvailable(this)) {
+            val user = FirebaseAuth.getInstance().currentUser
+            user?.reload()?.addOnCompleteListener { task ->
+                if (task.isSuccessful) {
+                    navController.navigate(R.id.navigation_friends)
+                }
+            }
+        } else {
+            Snackbar.make(binding.root, "No internet connection", Snackbar.LENGTH_LONG).show()
         }
+
 
         navView.setupWithNavController(navController)
     }

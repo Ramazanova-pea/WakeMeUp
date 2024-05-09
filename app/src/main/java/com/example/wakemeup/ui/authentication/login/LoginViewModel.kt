@@ -6,27 +6,29 @@ import androidx.lifecycle.ViewModel
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.FirebaseAuthInvalidCredentialsException
 import com.google.firebase.auth.FirebaseAuthInvalidUserException
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.flow.Flow
+import kotlinx.coroutines.flow.flow
+import kotlinx.coroutines.flow.flowOn
+import kotlinx.coroutines.tasks.await
 
 class LoginViewModel : ViewModel() {
-    private val _loginState = MutableLiveData<LoginState>()
-    val loginState: MutableLiveData<LoginState>
-        get() = _loginState
 
-    fun onLoginClick(email: String, password: String, context: Context) {
+    fun onLoginClick(email: String, password: String, context: Context): Flow<LoginState> = flow {
+        var state = LoginState.ERROR
         FirebaseAuth.getInstance().signInWithEmailAndPassword(email, password).addOnCompleteListener { task ->
-            if (task.isSuccessful) {
-                _loginState.value = LoginState.SUCCESS
+            state = if (task.isSuccessful) {
+                LoginState.SUCCESS
             } else {
-                when(task.exception) {
-                    is FirebaseAuthInvalidUserException -> _loginState.value =
-                        LoginState.ERROR_USER_DOESNT_EXIST
-                    is FirebaseAuthInvalidCredentialsException -> _loginState.value =
-                        LoginState.ERROR_WRONG_PASSWORD
-                    else -> _loginState.value = LoginState.ERROR
+                when (task.exception) {
+                    is FirebaseAuthInvalidUserException -> LoginState.ERROR_USER_DOESNT_EXIST
+                    is FirebaseAuthInvalidCredentialsException -> LoginState.ERROR_WRONG_PASSWORD
+                    else -> LoginState.ERROR
                 }
             }
-        }
-    }
+        }.await()
+        emit(state)
+    }.flowOn(Dispatchers.IO)
 }
 
 

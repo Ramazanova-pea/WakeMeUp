@@ -10,6 +10,7 @@ import android.view.ViewGroup
 import androidx.core.content.res.ResourcesCompat
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
+import androidx.lifecycle.lifecycleScope
 import androidx.navigation.fragment.findNavController
 import com.example.wakemeup.MainActivity
 import com.example.wakemeup.R
@@ -17,6 +18,7 @@ import com.example.wakemeup.databinding.FragmentLoginBinding
 import com.google.android.material.snackbar.Snackbar
 import com.google.android.material.textfield.TextInputEditText
 import com.google.android.material.textfield.TextInputLayout
+import kotlinx.coroutines.launch
 
 /**
  * This is the LoginFragment class which is responsible for the user login process.
@@ -35,7 +37,7 @@ class LoginFragment : Fragment() {
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?,
-    ): View? {
+    ): View {
         binding = FragmentLoginBinding.inflate(inflater, container, false)
         viewModel = ViewModelProvider(this)[LoginViewModel::class.java]
 
@@ -43,19 +45,6 @@ class LoginFragment : Fragment() {
 
         setupEyeIconClick(binding.inputPasswordLayout2)
         setupEditTexts()
-
-        // Observing the login state
-        viewModel.loginState.observe(viewLifecycleOwner) { state ->
-            when(state) {
-                LoginState.SUCCESS -> {
-                    Log.d("LoginFragment", "Logged in successfully")
-                    findNavController().navigate(R.id.navigation_friends)
-                }
-                LoginState.ERROR_USER_DOESNT_EXIST -> setError(binding.inputLoginLayout2, "User with this login doesn't exist")
-                LoginState.ERROR_WRONG_PASSWORD -> setError(binding.inputPasswordLayout2, "Wrong password")
-                LoginState.ERROR -> Snackbar.make(binding.root, "Some error has occurred", Snackbar.LENGTH_SHORT).show()
-            }
-        }
 
         // Setting up the click listener for the login button
         binding.loginButton.setOnClickListener {
@@ -66,7 +55,9 @@ class LoginFragment : Fragment() {
             if (password.isEmpty()) setError(binding.inputPasswordLayout2, "Password is required")
 
             if (login.isNotEmpty() && password.isNotEmpty()) {
-                viewModel.onLoginClick(login, password, requireContext())
+                lifecycleScope.launch {
+                    viewModel.onLoginClick(login, password, requireContext()).collect { state -> processLoginState(state) }
+                }
             }
         }
 
@@ -78,6 +69,18 @@ class LoginFragment : Fragment() {
         }
 
         return binding.root
+    }
+
+    fun processLoginState(state: LoginState) {
+        when(state) {
+            LoginState.SUCCESS -> {
+                Log.d("LoginFragment", "Logged in successfully")
+                findNavController().navigate(R.id.navigation_friends)
+            }
+            LoginState.ERROR_USER_DOESNT_EXIST -> setError(binding.inputLoginLayout2, "User with this login doesn't exist")
+            LoginState.ERROR_WRONG_PASSWORD -> setError(binding.inputPasswordLayout2, "Wrong password")
+            LoginState.ERROR -> Snackbar.make(binding.root, "Some error has occurred", Snackbar.LENGTH_SHORT).show()
+        }
     }
 
     /**
