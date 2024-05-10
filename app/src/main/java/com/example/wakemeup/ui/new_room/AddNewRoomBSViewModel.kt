@@ -16,12 +16,13 @@ import kotlinx.coroutines.flow.flowOn
 class AddNewRoomBSViewModel : ViewModel() {
 
     private var roomImage: Bitmap? = null
-    fun addRoom(roomName: String, roomId: String): Flow<CreateRoomState> = flow {
+    fun addRoom(roomName: String, roomId: String, isPrivate: Boolean): Flow<CreateRoomState> = flow {
         emit(CreateRoomState.LOADING)
         val state = CreateRoomUseCase.execute(
             roomName = roomName,
             roomId = roomId,
             roomImage = roomImage!!,
+            isPrivate = isPrivate,
             repository = RoomsRepositoryImpl()
         )
         emit(state)

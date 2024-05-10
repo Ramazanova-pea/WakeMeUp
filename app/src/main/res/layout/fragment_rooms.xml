@@ -6,6 +6,12 @@
     android:layout_height="match_parent"
     tools:context=".ui.rooms.RoomsFragment">
 
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:src="@drawable/background_eye"
+        android:layout_margin="32dp"/>
+
     <com.google.android.material.appbar.AppBarLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
@@ -23,20 +29,53 @@
 
     </com.google.android.material.appbar.AppBarLayout>
 
+
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rooms_recycler_view"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:paddingStart="12dp"
+        android:paddingEnd="12dp"
         app:layout_behavior="@string/appbar_scrolling_view_behavior" />
 
+    <!-- Small fab higher than the big fab -->
+
     <com.google.android.material.floatingactionbutton.FloatingActionButton
+        style="?attr/floatingActionButtonSmallStyle"
+        android:id="@+id/fabSmall"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom|end"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="80dp"
+        android:src="@drawable/search"
+        android:visibility="visible"/>
+
+    <com.google.android.material.floatingactionbutton.ExtendedFloatingActionButton
         android:id="@+id/fab"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="bottom|end"
         android:layout_margin="16dp"
-        app:srcCompat="@drawable/baseline_add_24" />
+        app:icon="@drawable/baseline_add_24"
+        android:text="@string/create_room"/>
 
+    <View
+        android:id="@+id/blockingView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#000000"
+        android:alpha="0.5"
+        android:visibility="gone" />
+
+
+    <!-- Loading spinner -->
+    <ProgressBar
+        android:id="@+id/progressBar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:visibility="gone" />
 
 
 </androidx.coordinatorlayout.widget.CoordinatorLayout>

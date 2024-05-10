@@ -83,7 +83,15 @@ class FriendsFragment : Fragment() {
 
         if (isNetworkAvailable(requireContext())) {
             lifecycleScope.launch {
-                friendsViewModel.getFriends()
+                friendsViewModel.getFriends().collect {
+                    if (it) {
+                        binding.blockingView.visibility = View.GONE
+                        binding.progressBar.visibility = View.GONE
+                    } else {
+                        binding.blockingView.visibility = View.VISIBLE
+                        binding.progressBar.visibility = View.VISIBLE
+                    }
+                }
 
             }
         } else {

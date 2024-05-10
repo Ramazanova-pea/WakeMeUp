@@ -10,6 +10,7 @@ class CreateRoomUseCase {
         suspend fun execute(
             roomName: String,
             roomId: String,
+            isPrivate: Boolean,
             roomImage: Bitmap,
             repository: RoomsRepository
         ): CreateRoomState {
@@ -17,7 +18,7 @@ class CreateRoomUseCase {
                 return CreateRoomState.ROOM_ALREADY_EXISTS
             }
 
-            repository.addRoom(roomName, roomId, bitmapToByteArray(roomImage))
+            repository.addRoom(roomName, roomId, isPrivate, bitmapToByteArray(roomImage))
 
             return CreateRoomState.SUCCESS
         }
