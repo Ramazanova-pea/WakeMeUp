@@ -47,10 +47,14 @@
         android:layout_marginEnd="16dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
+        app:counterEnabled="true"
+        app:counterMaxLength="16"
         app:layout_constraintTop_toBottomOf="@id/room_avatar_image_view">
 
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/room_name_edit_text"
+            android:maxLength="16"
+            android:maxLines="1"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="@string/name" />
@@ -64,8 +68,11 @@
         android:layout_marginStart="16dp"
         android:layout_marginTop="16dp"
         android:layout_marginEnd="16dp"
+        app:counterEnabled="true"
+        app:counterMaxLength="16"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
+
         app:layout_constraintTop_toBottomOf="@id/room_name_text_input_layout">
 
         <com.google.android.material.textfield.TextInputEditText
@@ -73,6 +80,8 @@
             android:id="@+id/room_id_edit_text"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:maxLength="16"
+            android:maxLines="1"
             android:hint="@string/unique_room_id" />
 
     </com.google.android.material.textfield.TextInputLayout>
@@ -85,8 +94,19 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
         android:layout_marginEnd="16dp"
-        android:text="Create room"
+        android:text="@string/create_room"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/room_id_text_input_layout" />
+
+    <!-- Checkbox is private -->
+    <com.google.android.material.checkbox.MaterialCheckBox
+        android:id="@+id/is_private_checkbox"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:text="@string/isPrivate"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/room_id_text_input_layout" />
 
 

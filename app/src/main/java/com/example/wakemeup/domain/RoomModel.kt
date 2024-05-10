@@ -4,6 +4,8 @@ data class RoomModel(
     val roomName: String,
     val roomId: String,
     val image: ByteArray,
+    val isPrivate: Boolean = false,
+    val blockedUsers: MutableList<String> = mutableListOf(),  // User IDs
     val members: MutableList<String> = mutableListOf(),  // User IDs
     val administrators: MutableList<String> = mutableListOf(),  // User IDs
     val notes: MutableMap<String, String> = mutableMapOf()  // User ID -> Note
