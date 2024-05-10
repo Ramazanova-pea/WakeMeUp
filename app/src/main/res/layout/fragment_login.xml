@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/md_theme_surfaceContainerLow"
-    tools:context=".ui.login.LoginFragment">
+    tools:context=".ui.authentication.login.LoginFragment">
 
     <TextView
         android:id="@+id/loginText_loginFragment"
@@ -51,7 +51,7 @@
         android:layout_marginTop="16dp"
         android:layout_marginEnd="48dp"
         android:hint="@string/password"
-        app:endIconDrawable="@drawable/open_eye"
+        app:endIconDrawable="@drawable/closed_eye"
         app:endIconMode="custom"
         app:layout_constraintBottom_toTopOf="@id/loginButton"
         app:layout_constraintEnd_toEndOf="parent"
@@ -61,7 +61,8 @@
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/inputPassword2"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
+            android:layout_height="wrap_content"
+            android:inputType="textPassword"/>
 
     </com.google.android.material.textfield.TextInputLayout>
 
@@ -88,6 +89,9 @@
         app:layout_constraintTop_toBottomOf="@+id/loginButton"
         app:layout_constraintEnd_toEndOf="parent"/>
 
+    <!-- Why this button is called "proceedButton" and not "signupButton"? -->
+    <!-- @peterkrglv ??? -->
+    <!-- @RamazanovaMO ??? -->
     <Button
         android:id="@+id/proceedButton_loginFragment"
         style="@style/Widget.Material3.Button.TextButton"
