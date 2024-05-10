@@ -43,6 +43,7 @@ class SignupFragment : Fragment() {
                     findNavController().navigate(R.id.action_signupFragment_to_navigation_friends)
 
                 }
+                RegistrationState.ERROR_INVALID_EMAIL -> setError(binding.inputLoginLayout, "Invalid email adress")
                 RegistrationState.ERROR_USER_ALREADY_EXISTS -> setError(binding.inputLoginLayout, "User with this login already exists")
                 RegistrationState.ERROR_WEAK_PASSWORD -> setError(binding.inputPasswordLayout, "Password is too weak")
                 RegistrationState.ERROR_INVALID_CREDENTIALS -> setError(binding.inputLoginLayout, "Invalid credentials")

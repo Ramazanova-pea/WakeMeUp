@@ -40,6 +40,7 @@ class LoginFragment : Fragment() {
                     findNavController().navigate(R.id.action_loginFragment_to_navigation_friends)
 
                 }
+                LoginState.ERROR_INVALID_EMAIL -> setError(binding.inputLoginLayout2, "Invalid email adress")
                 LoginState.ERROR_USER_DOESNT_EXIST -> setError(binding.inputLoginLayout2, "User with this login doesn't exist")
                 LoginState.ERROR_WRONG_PASSWORD -> setError(binding.inputPasswordLayout2, "Wrong password")
                 LoginState.ERROR -> Snackbar.make(binding.root, "Some error has occurred", Snackbar.LENGTH_SHORT).show()
@@ -54,7 +55,10 @@ class LoginFragment : Fragment() {
             if (login.isEmpty()) setError(binding.inputLoginLayout2, "Login is required")
             if (password.isEmpty()) setError(binding.inputPasswordLayout2, "Password is required")
 
-            if (login.isNotEmpty() && password.isNotEmpty()) {
+            if (!viewModel.checkEmail(login)) {
+                // setError()
+            }
+            else if (login.isNotEmpty() && password.isNotEmpty()) {
                 viewModel.onLoginClick(login, password)
             }
         }
