@@ -95,7 +95,6 @@ class SignupFragment : Fragment() {
                 phoneNumber.isNotEmpty() &&
                 password == passwordConfirm
             ) {
-
                 lifecycleScope.launch {
                     viewModel.onSignUpClick(
                         name,
@@ -112,40 +111,65 @@ class SignupFragment : Fragment() {
         // Why the button is called "Proceed"?
         // @peterkrglv, @RamazanovaMO???
         // Setting up the click listener for the proceed button
-        binding.proceedButtonSignupFragment.setOnClickListener {
+        binding.loginButton.setOnClickListener {
             (activity as? MainActivity)?.goToLogin()
         }
+
+        binding.blockingView.setOnClickListener(null)
 
         return binding.root
     }
 
     fun processEmittedState(state: RegistrationState) {
         when (state) {
+            RegistrationState.LOADING -> {
+                Log.d("SignupFragment", "Loading")
+                binding.blockingView.visibility = View.VISIBLE
+                binding.progressBar.visibility = View.VISIBLE
+            }
+
             RegistrationState.SUCCESS -> {
+                binding.blockingView.visibility = View.GONE
+                binding.progressBar.visibility = View.GONE
                 Log.d("SignupFragment", "User created successfully")
                 findNavController().navigate(R.id.action_authenticationViewPagerFragment_to_navigation_friends)
             }
 
-            RegistrationState.ERROR_USER_ALREADY_EXISTS -> setError(
+            RegistrationState.ERROR_USER_ALREADY_EXISTS -> {
+                binding.blockingView.visibility = View.GONE
+                binding.progressBar.visibility = View.GONE
+                setError(
                 binding.inputLoginLayout,
                 "User with this login already exists"
-            )
+            )}
 
-            RegistrationState.ERROR_WEAK_PASSWORD -> setError(
-                binding.inputPasswordLayout,
-                "Password is too weak"
-            )
+            RegistrationState.ERROR_WEAK_PASSWORD -> {
+                binding.blockingView.visibility = View.GONE
+                binding.progressBar.visibility = View.GONE
+                setError(
+                    binding.inputPasswordLayout,
+                    "Password is too weak"
+                )
+            }
 
-            RegistrationState.ERROR_INVALID_CREDENTIALS -> setError(
-                binding.inputLoginLayout,
-                "Invalid credentials"
-            )
+            RegistrationState.ERROR_INVALID_CREDENTIALS -> {
+                binding.blockingView.visibility = View.GONE
+                binding.progressBar.visibility = View.GONE
+                setError(
+                    binding.inputLoginLayout,
+                    "Invalid credentials"
+                )
+            }
 
-            RegistrationState.ERROR -> Snackbar.make(
-                binding.root,
-                "Some error has occurred",
-                Snackbar.LENGTH_SHORT
-            ).show()
+            RegistrationState.ERROR -> {
+                binding.blockingView.visibility = View.GONE
+                binding.progressBar.visibility = View.GONE
+                Snackbar.make(
+                    binding.root,
+                    "Some error has occurred",
+                    Snackbar.LENGTH_SHORT
+                ).show()
+            }
         }
     }
 

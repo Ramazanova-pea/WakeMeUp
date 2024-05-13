@@ -15,18 +15,20 @@ import kotlinx.coroutines.tasks.await
 class LoginViewModel : ViewModel() {
 
     fun onLoginClick(email: String, password: String, context: Context): Flow<LoginState> = flow {
+        emit(LoginState.LOADING)
         var state = LoginState.ERROR
-        FirebaseAuth.getInstance().signInWithEmailAndPassword(email, password).addOnCompleteListener { task ->
-            state = if (task.isSuccessful) {
-                LoginState.SUCCESS
-            } else {
-                when (task.exception) {
-                    is FirebaseAuthInvalidUserException -> LoginState.ERROR_USER_DOESNT_EXIST
-                    is FirebaseAuthInvalidCredentialsException -> LoginState.ERROR_WRONG_PASSWORD
-                    else -> LoginState.ERROR
-                }
-            }
-        }.await()
+        try {
+            FirebaseAuth.getInstance().signInWithEmailAndPassword(email, password)
+                .addOnCompleteListener { task ->
+                    state = if (task.isSuccessful) {
+                        LoginState.SUCCESS
+                    } else {
+                        LoginState.ERROR
+                    }
+                }.await()
+        } catch (e: FirebaseAuthInvalidCredentialsException) {
+            state = LoginState.ERROR_WRONG_CREDENTIALS
+        }
         emit(state)
     }.flowOn(Dispatchers.IO)
 }
@@ -34,7 +36,7 @@ class LoginViewModel : ViewModel() {
 
 enum class LoginState {
     SUCCESS,
-    ERROR_USER_DOESNT_EXIST,
-    ERROR_WRONG_PASSWORD,
-    ERROR
+    ERROR_WRONG_CREDENTIALS,
+    ERROR,
+    LOADING
 }
