@@ -1,5 +1,6 @@
 package com.example.wakemeup
 
+import android.content.Context
 import android.os.Bundle
 import android.util.Log
 import android.view.View
@@ -21,12 +22,13 @@ class MainActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityMainBinding
     private lateinit var navController: NavController
+    private var currentFragmentId: Int = R.id.navigation_alarms
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
         binding = ActivityMainBinding.inflate(layoutInflater)
-        setContentView(binding.root)
+
 
         val navView: BottomNavigationView = binding.navView
         val navHostFragment =
@@ -37,6 +39,11 @@ class MainActivity : AppCompatActivity() {
                 R.id.navigation_alarms, R.id.navigation_friends, R.id.navigation_rooms
             )
         )
+        navController = navHostFragment.navController
+        setupNavController()
+        if (savedInstanceState != null) {
+            currentFragmentId = savedInstanceState.getInt("currentFragmentId")
+        }
 
         navController.addOnDestinationChangedListener { _, destination, _ ->
             when (destination.id) {
@@ -51,15 +58,34 @@ class MainActivity : AppCompatActivity() {
             val user = FirebaseAuth.getInstance().currentUser
             user?.reload()?.addOnCompleteListener { task ->
                 if (task.isSuccessful) {
-                    navController.navigate(R.id.navigation_friends)
+                    if (currentFragmentId != R.id.startingFragment) {
+                        navController.navigate(currentFragmentId)
+                    }
+                    else {
+                        navController.navigate(R.id.navigation_friends)
+                    }
+                } else {
+                    navController.navigate(R.id.authenticationViewPagerFragment)
                 }
-            }
+            } ?: navController.navigate(R.id.authenticationViewPagerFragment)
         } else {
             Snackbar.make(binding.root, "No internet connection", Snackbar.LENGTH_LONG).show()
         }
 
 
         navView.setupWithNavController(navController)
+
+        setContentView(binding.root)
+    }
+
+    override fun onSaveInstanceState(outState: Bundle) {
+        super.onSaveInstanceState(outState)
+        outState.putInt("currentFragmentId", currentFragmentId)
+    }
+    private fun setupNavController() {
+        navController.addOnDestinationChangedListener { _, destination, _ ->
+            currentFragmentId = destination.id
+        }
     }
 
     fun goToSignup() {

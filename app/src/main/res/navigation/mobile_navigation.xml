@@ -3,7 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/mobile_navigation"
-    app:startDestination="@id/authenticationViewPagerFragment">
+    app:startDestination="@id/startingFragment">
 
     <fragment
         android:id="@+id/navigation_alarms"
@@ -40,4 +40,16 @@
         android:name="com.example.wakemeup.ui.settings.SettingsFragment"
         android:label="fragment_settings"
         tools:layout="@layout/fragment_settings" />
+    <fragment
+        android:id="@+id/startingFragment"
+        android:name="com.example.wakemeup.ui.StartingFragment"
+        android:label="fragment_starting"
+        tools:layout="@layout/fragment_starting" >
+        <action
+            android:id="@+id/action_startingFragment_to_authenticationViewPagerFragment"
+            app:destination="@id/authenticationViewPagerFragment" />
+        <action
+            android:id="@+id/action_startingFragment_to_navigation_friends"
+            app:destination="@id/navigation_friends" />
+    </fragment>
 </navigation>

@@ -4,10 +4,12 @@ import android.content.Context
 import android.graphics.Bitmap
 import android.net.Uri
 import android.provider.MediaStore
+import android.util.Log
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import com.example.wakemeup.data.UsersRepositoryImpl
 import com.example.wakemeup.domain.CreateUserUseCase
+import com.example.wakemeup.ui.authentication.login.LoginState
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.FirebaseAuthInvalidCredentialsException
 import com.google.firebase.auth.FirebaseAuthUserCollisionException
@@ -31,26 +33,27 @@ class SignupViewModel : ViewModel() {
         phoneNumber: String,
         context: Context
     ): Flow<RegistrationState> = flow {
+        emit(RegistrationState.LOADING)
         var state: RegistrationState = RegistrationState.ERROR
-        FirebaseAuth.getInstance().createUserWithEmailAndPassword(email, password)
-            .addOnCompleteListener { task ->
-                if (task.isSuccessful) {
-                    state = RegistrationState.SUCCESS
-                } else {
-                    when (task.exception) {
-                        is FirebaseAuthUserCollisionException -> state =
-                            RegistrationState.ERROR_USER_ALREADY_EXISTS
-
-                        is FirebaseAuthWeakPasswordException -> state =
-                            RegistrationState.ERROR_WEAK_PASSWORD
-
-                        is FirebaseAuthInvalidCredentialsException -> state =
-                            RegistrationState.ERROR_INVALID_CREDENTIALS
+        try {
+            FirebaseAuth.getInstance().createUserWithEmailAndPassword(email, password)
+                .addOnCompleteListener { task ->
+                    if (task.isSuccessful) {
+                        state = RegistrationState.SUCCESS
+                    } else {
+                        state = RegistrationState.ERROR
                     }
-                }
-            }.await()
+                }.await()
+        } catch (e: FirebaseAuthUserCollisionException) {
+            state = RegistrationState.ERROR_USER_ALREADY_EXISTS
+        } catch (e: FirebaseAuthWeakPasswordException) {
+            state = RegistrationState.ERROR_WEAK_PASSWORD
+        } catch (e: FirebaseAuthInvalidCredentialsException) {
+            state = RegistrationState.ERROR_INVALID_CREDENTIALS
+        }
         if (state != RegistrationState.SUCCESS) {
             emit(state)
+            Log.e("SignupViewModel", "Error: $state")
             return@flow
         }
         CreateUserUseCase.execute(
@@ -87,6 +90,7 @@ class SignupViewModel : ViewModel() {
 }
 
 enum class RegistrationState {
+    LOADING,
     SUCCESS,
     ERROR_USER_ALREADY_EXISTS,
     ERROR_WEAK_PASSWORD,

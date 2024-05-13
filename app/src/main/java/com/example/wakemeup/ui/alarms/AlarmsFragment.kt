@@ -5,8 +5,10 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
+import androidx.appcompat.app.AppCompatDelegate
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
+import com.example.wakemeup.R
 import com.example.wakemeup.databinding.FragmentAlarmsBinding
 
 class AlarmsFragment : Fragment() {
@@ -32,6 +34,7 @@ class AlarmsFragment : Fragment() {
         alarmsViewModel.text.observe(viewLifecycleOwner) {
             textView.text = it
         }
+
         return root
     }
 

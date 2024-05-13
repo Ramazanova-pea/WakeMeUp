@@ -83,17 +83,14 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="25dp"
         android:text="@string/proceedToSignup"
-        app:layout_constraintBottom_toTopOf="@id/proceedButton_loginFragment"
+        app:layout_constraintBottom_toTopOf="@id/signupButton"
         app:layout_constraintHorizontal_chainStyle="packed"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/loginButton"
         app:layout_constraintEnd_toEndOf="parent"/>
 
-    <!-- Why this button is called "proceedButton" and not "signupButton"? -->
-    <!-- @peterkrglv ??? -->
-    <!-- @RamazanovaMO ??? -->
     <Button
-        android:id="@+id/proceedButton_loginFragment"
+        android:id="@+id/signupButton"
         style="@style/Widget.Material3.Button.TextButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -106,4 +103,24 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"/>
 
+
+    <View
+        android:id="@+id/blockingView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#000000"
+        android:alpha="0.5"
+        android:visibility="gone" />
+
+    <ProgressBar
+        android:id="@+id/progressBar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:visibility="gone"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        />
 </androidx.constraintlayout.widget.ConstraintLayout>
