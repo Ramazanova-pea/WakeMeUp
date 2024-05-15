@@ -16,7 +16,7 @@
             android:layout_height="wrap_content"
             android:minHeight="?attr/actionBarSize"
             app:navigationIcon="@drawable/arrow_back"
-            app:menu="@menu/top_app_bar_menu_rooms"
+            app:menu="@menu/top_app_bar_menu_rooms_admin"
             app:subtitleCentered="true"
             app:titleCentered="true"
             android:backgroundTint="@color/design_default_color_surface"
