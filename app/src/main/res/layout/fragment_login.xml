@@ -100,7 +100,7 @@
         android:minHeight="0dp"
         android:paddingTop="0dp"
         android:text="@string/signupButton"
-        android:textAlignment="textStart"
+        android:textAlignment="center"
         app:layout_constraintTop_toBottomOf="@+id/proceedText_loginFragment"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
