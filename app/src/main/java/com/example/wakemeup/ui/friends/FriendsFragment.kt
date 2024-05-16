@@ -25,8 +25,7 @@ import java.util.Calendar
 
 class FriendsFragment : Fragment() {
 
-    private var _binding: FragmentFriendsBinding? = null
-    private val binding get() = _binding!!
+    private lateinit var binding: FragmentFriendsBinding
     private lateinit var friendsViewModel: FriendsViewModel
     private lateinit var friendsAdapter: FriendsAdapter
 
@@ -37,7 +36,7 @@ class FriendsFragment : Fragment() {
     ): View {
         friendsViewModel = ViewModelProvider(this)[FriendsViewModel::class.java]
 
-        _binding = FragmentFriendsBinding.inflate(inflater, container, false)
+        binding = FragmentFriendsBinding.inflate(inflater, container, false)
         val root: View = binding.root
 
         binding.topAppBar.setNavigationOnClickListener {
@@ -56,7 +55,6 @@ class FriendsFragment : Fragment() {
                             AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES)
                         }
                     }
-
                     true
                 }
 
@@ -76,6 +74,8 @@ class FriendsFragment : Fragment() {
             }
         }
 
+        binding.blockingView.setOnClickListener(null)
+
         return root
     }
 
@@ -92,7 +92,6 @@ class FriendsFragment : Fragment() {
                         binding.progressBar.visibility = View.VISIBLE
                     }
                 }
-
             }
         } else {
             Snackbar.make(
@@ -103,10 +102,5 @@ class FriendsFragment : Fragment() {
         }
 
         super.onResume()
-    }
-
-    override fun onDestroyView() {
-        super.onDestroyView()
-        _binding = null
     }
 }

@@ -4,10 +4,13 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.appcompat.app.AppCompatDelegate
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import androidx.lifecycle.lifecycleScope
 import androidx.recyclerview.widget.GridLayoutManager
+import com.example.wakemeup.R
+import com.example.wakemeup.databinding.FragmentFriendsBinding
 import com.example.wakemeup.databinding.FragmentRoomsBinding
 import com.example.wakemeup.ui.join_room_dialog.JoinRoomDialogFragment
 import com.example.wakemeup.ui.new_room.AddNewRoomBottomSheet
@@ -16,8 +19,7 @@ import kotlinx.coroutines.launch
 
 class RoomsFragment : Fragment() {
 
-    private var _binding: FragmentRoomsBinding? = null
-    private val binding get() = _binding!!
+    private lateinit var binding: FragmentRoomsBinding
     private lateinit var roomsViewModel: RoomsViewModel
     private lateinit var roomsAdapter: RoomsAdapter
 
@@ -29,7 +31,7 @@ class RoomsFragment : Fragment() {
         roomsViewModel =
             ViewModelProvider(this)[RoomsViewModel::class.java]
 
-        _binding = FragmentRoomsBinding.inflate(inflater, container, false)
+        binding = FragmentRoomsBinding.inflate(inflater, container, false)
         val root: View = binding.root
 
         binding.fabSmall.setOnClickListener {
@@ -55,6 +57,27 @@ class RoomsFragment : Fragment() {
         roomsAdapter = RoomsAdapter(ArrayList())
         binding.roomsRecyclerView.layoutManager = GridLayoutManager(context, 2)
         binding.roomsRecyclerView.adapter = roomsAdapter
+
+        binding.topAppBar.setOnMenuItemClickListener { menuItem ->
+            when (menuItem.itemId) {
+                R.id.change_theme -> {
+                    when (resources.configuration.uiMode and android.content.res.Configuration.UI_MODE_NIGHT_MASK) {
+                        android.content.res.Configuration.UI_MODE_NIGHT_YES -> {
+                            AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO)
+                        }
+
+                        android.content.res.Configuration.UI_MODE_NIGHT_NO -> {
+                            AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES)
+                        }
+                    }
+                    true
+                }
+
+                else -> false
+            }
+        }
+
+        binding.blockingView.setOnClickListener(null)
 
         lifecycleScope.launch {
             roomsViewModel.rooms.collect { rooms ->
@@ -85,10 +108,5 @@ class RoomsFragment : Fragment() {
                 }
             }
         }
-    }
-
-    override fun onDestroyView() {
-        super.onDestroyView()
-        _binding = null
     }
 }

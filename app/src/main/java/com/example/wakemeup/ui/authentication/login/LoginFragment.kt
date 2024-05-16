@@ -41,8 +41,6 @@ class LoginFragment : Fragment() {
         binding = FragmentLoginBinding.inflate(inflater, container, false)
         viewModel = ViewModelProvider(this)[LoginViewModel::class.java]
 
-
-
         setupEyeIconClick(binding.inputPasswordLayout2)
         setupEditTexts()
 
@@ -53,8 +51,8 @@ class LoginFragment : Fragment() {
 
             if (login.isEmpty()) setError(binding.inputLoginLayout2, "Login is required")
             if (password.isEmpty()) setError(binding.inputPasswordLayout2, "Password is required")
-
-            if (login.isNotEmpty() && password.isNotEmpty()) {
+            if (!android.util.Patterns.EMAIL_ADDRESS.matcher(login).matches()) setError(binding.inputLoginLayout2, "Email is not valid")
+            if (login.isNotEmpty() && password.isNotEmpty() && android.util.Patterns.EMAIL_ADDRESS.matcher(login).matches()) {
                 lifecycleScope.launch {
                     viewModel.onLoginClick(login, password, requireContext()).collect { state -> processLoginState(state) }
                 }
@@ -64,22 +62,37 @@ class LoginFragment : Fragment() {
         // Setting up the click listener for the proceed button
         // Why the button is called "Proceed"?
         // @peterkrglv, @RamazanovaMO???
-        binding.proceedButtonLoginFragment.setOnClickListener {
+        binding.signupButton.setOnClickListener {
             (activity as? MainActivity)?.goToSignup()
         }
+
+        binding.blockingView.setOnClickListener(null)
 
         return binding.root
     }
 
     fun processLoginState(state: LoginState) {
         when(state) {
+            LoginState.LOADING -> {
+                Log.d("LoginFragment", "Loading")
+                binding.blockingView.visibility = View.VISIBLE
+                binding.progressBar.visibility = View.VISIBLE
+            }
             LoginState.SUCCESS -> {
                 Log.d("LoginFragment", "Logged in successfully")
                 findNavController().navigate(R.id.navigation_friends)
             }
-            LoginState.ERROR_USER_DOESNT_EXIST -> setError(binding.inputLoginLayout2, "User with this login doesn't exist")
-            LoginState.ERROR_WRONG_PASSWORD -> setError(binding.inputPasswordLayout2, "Wrong password")
-            LoginState.ERROR -> Snackbar.make(binding.root, "Some error has occurred", Snackbar.LENGTH_SHORT).show()
+            LoginState.ERROR_WRONG_CREDENTIALS -> {
+                binding.blockingView.visibility = View.GONE
+                binding.progressBar.visibility = View.GONE
+                setError(binding.inputPasswordLayout2, "Wrong email or password")
+                setError(binding.inputLoginLayout2, "")
+            }
+            LoginState.ERROR -> {
+                binding.blockingView.visibility = View.GONE
+                binding.progressBar.visibility = View.GONE
+                Snackbar.make(binding.root, "Some error has occurred", Snackbar.LENGTH_SHORT).show()
+            }
         }
     }
 
@@ -136,4 +149,5 @@ class LoginFragment : Fragment() {
     private fun setError(layout: TextInputLayout, error: String) {
         layout.error = error
     }
+
 }

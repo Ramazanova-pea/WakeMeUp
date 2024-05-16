@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.settings.SettingsFragment">
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <com.google.android.material.appbar.MaterialToolbar
+            android:id="@+id/topAppBar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:minHeight="?attr/actionBarSize"
+            app:navigationIcon="@drawable/arrow_back"
+            app:menu="@menu/top_app_bar_menu_rooms_admin"
+            app:subtitleCentered="true"
+            app:titleCentered="true"
+            android:backgroundTint="@color/design_default_color_surface"
+            app:subtitle="ID:"
+            app:title="RoomName"
+            app:titleTextColor="@color/md_theme_onSurface"
+            />
+
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+        <com.google.android.material.imageview.ShapeableImageView
+            android:id="@+id/roomImage"
+            android:layout_width="64dp"
+            android:layout_height="64dp"
+            android:src="@drawable/closed_eye"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            android:layout_marginTop="16dp"/>
+
+        <TextView
+            android:id="@+id/roomDescriptionText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:layout_marginHorizontal="32dp"
+            android:text="Descriptions: "
+            android:textColor="@color/md_theme_onSurface"
+            app:layout_constraintTop_toBottomOf="@id/roomImage"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:textSize="18sp"/>
+
+        <TextView
+            android:id="@+id/memberText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@id/roomDescriptionText"
+            app:layout_constraintStart_toStartOf="parent"
+            android:layout_margin="16dp"
+            android:textColor="@color/md_theme_onSurface"
+            android:text="Members"
+            android:textSize="24dp"
+            android:textStyle="bold" />
+
+        <com.google.android.material.divider.MaterialDivider
+            android:id="@+id/extraDivider"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:dividerThickness="2dp"
+            android:minWidth="0dp"
+            android:layout_marginEnd="16dp"
+            android:layout_marginStart="16dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintBottom_toBottomOf="@id/memberText"/>
+
+        <ImageView
+            android:layout_width="12dp"
+            android:layout_height="12dp"
+            android:src="@drawable/diamond"
+            app:layout_constraintEnd_toStartOf="@id/extraDivider"
+            app:layout_constraintTop_toTopOf="@id/extraDivider"
+            app:layout_constraintBottom_toBottomOf="@id/extraDivider"
+            app:tint="@color/md_theme_outlineVariant"/>
+
+        <ImageView
+            android:layout_width="12dp"
+            android:layout_height="12dp"
+            android:src="@drawable/diamond"
+            app:layout_constraintStart_toEndOf="@id/extraDivider"
+            app:layout_constraintTop_toTopOf="@id/extraDivider"
+            app:layout_constraintBottom_toBottomOf="@id/extraDivider"
+            app:tint="@color/md_theme_outlineVariant"/>
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/room_members_recycler_view"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@+id/extraDivider"
+            app:layout_behavior="@string/appbar_scrolling_view_behavior" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

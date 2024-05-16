@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="8dp"
+    android:layout_marginStart="16dp"
+    android:layout_marginEnd="16dp"
+    android:elevation="8dp"
+    app:cardCornerRadius="12dp"
+    android:backgroundTint="@color/md_theme_surfaceContainerLow">
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+
+        <com.google.android.material.imageview.ShapeableImageView
+            android:id="@+id/profile_pic"
+            android:layout_width="@dimen/profile_picture_size"
+            android:layout_height="@dimen/profile_picture_size"
+            android:layout_marginStart="16dp"
+            android:src="@drawable/account_circle_24px"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:shapeAppearanceOverlay="@style/roundedImageViewRounded"
+
+            />
+
+        <com.google.android.material.imageview.ShapeableImageView
+            android:id="@+id/status_background"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:background="@color/md_theme_surfaceContainerHighest"
+            android:padding="4dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@id/addToFriendList"
+            app:layout_constraintHorizontal_chainStyle="spread"
+            app:layout_constraintTop_toTopOf="parent"
+            app:shapeAppearanceOverlay="@style/roundedImageViewRounded" />
+
+        <com.google.android.material.imageview.ShapeableImageView
+            android:id="@+id/wake_up_status"
+            android:layout_width="24dp"
+            android:layout_height="wrap_content"
+            android:src="@drawable/closed_eye"
+            android:tint="@color/md_theme_onSurfaceVariant_mediumContrast"
+            app:layout_constraintBottom_toBottomOf="@+id/status_background"
+            app:layout_constraintEnd_toEndOf="@+id/status_background"
+            app:layout_constraintStart_toStartOf="@+id/status_background"
+            app:layout_constraintTop_toTopOf="@+id/status_background"
+            app:shapeAppearanceOverlay="@style/roundedImageViewRounded" />
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/friend_name"
+            style="@style/friends_text_style"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="16dp"
+            android:textColor="@color/md_theme_onSurface"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toTopOf="@id/wakeup_time"
+            app:layout_constraintStart_toEndOf="@id/profile_pic"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_chainStyle="packed"
+            tools:text="Member name" />
+
+        <com.google.android.material.divider.MaterialDivider
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            app:dividerInsetEnd="16dp"
+            app:dividerInsetStart="16dp"
+            app:dividerThickness="2dp"
+            app:layout_constraintBottom_toTopOf="@+id/wakeup_time"
+            app:layout_constraintEnd_toStartOf="@id/status_background"
+            app:layout_constraintStart_toEndOf="@id/profile_pic"
+            app:layout_constraintTop_toBottomOf="@+id/friend_name" />
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/wakeup_time"
+            style="@style/friends_text_style"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginBottom="16dp"
+            android:textColor="@color/md_theme_onPrimaryContainer"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toEndOf="@id/profile_pic"
+            app:layout_constraintTop_toBottomOf="@id/friend_name"
+            tools:text="13:00" />
+
+        <Button
+            android:id="@+id/addToFriendList"
+            style="?attr/materialIconButtonStyle"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_marginEnd="16dp"
+            app:icon="@drawable/star_40"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.cardview.widget.CardView>
