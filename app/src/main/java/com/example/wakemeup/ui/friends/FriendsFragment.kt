@@ -1,7 +1,7 @@
 package com.example.wakemeup.ui.friends
 
+import android.animation.ObjectAnimator
 import android.os.Bundle
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -12,16 +12,12 @@ import androidx.lifecycle.lifecycleScope
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.wakemeup.R
-import com.example.wakemeup.data.UsersRepositoryImpl
 import com.example.wakemeup.databinding.FragmentFriendsBinding
-import com.example.wakemeup.domain.FriendModel
 import com.example.wakemeup.isNetworkAvailable
 import com.google.android.material.snackbar.Snackbar
-import com.google.firebase.auth.FirebaseAuth
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
-import java.util.Calendar
 
 class FriendsFragment : Fragment() {
 
@@ -76,6 +72,8 @@ class FriendsFragment : Fragment() {
 
         binding.blockingView.setOnClickListener(null)
 
+        binding.progressBar.setVisibilityAfterHide(View.GONE)
+
         return root
     }
 
@@ -85,8 +83,27 @@ class FriendsFragment : Fragment() {
             lifecycleScope.launch {
                 friendsViewModel.getFriends().collect {
                     if (it) {
+                        binding.progressBar.setProgressCompat(100, true)
+                        withContext(Dispatchers.IO) {
+                            Thread.sleep(1000)
+                        }
+
+                        binding.progressBar.hide()
+                        val animator = ObjectAnimator.ofFloat(
+                            binding.blockingView,
+                            "alpha",
+                            0.4f,
+                            0f
+                        )
+                        animator.duration = 500
+                        animator.start()
+
+                        withContext(Dispatchers.IO) {
+                            Thread.sleep(500)
+                        }
+
                         binding.blockingView.visibility = View.GONE
-                        binding.progressBar.visibility = View.GONE
+
                     } else {
                         binding.blockingView.visibility = View.VISIBLE
                         binding.progressBar.visibility = View.VISIBLE

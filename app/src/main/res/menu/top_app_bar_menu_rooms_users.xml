@@ -7,6 +7,6 @@
         android:title="Overflow menu"
         android:contentDescription="Overflow menu"
         android:icon="@drawable/more"
-        app:showAsAction="ifRoom"
+        app:showAsAction="always"
         />
 </menu>

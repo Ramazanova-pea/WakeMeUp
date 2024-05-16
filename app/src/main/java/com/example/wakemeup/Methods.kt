@@ -1,9 +1,14 @@
 package com.example.wakemeup
 
 import android.content.Context
+import android.graphics.Bitmap
+import android.graphics.BitmapFactory
 import android.net.ConnectivityManager
 import android.net.NetworkCapabilities
 import android.os.Build
+import com.example.wakemeup.data.Room
+import com.example.wakemeup.domain.RoomModel
+import java.io.ByteArrayOutputStream
 
 fun isNetworkAvailable(context: Context): Boolean {
     val connectivityManager = context.getSystemService(Context.CONNECTIVITY_SERVICE) as ConnectivityManager
@@ -20,4 +25,14 @@ fun isNetworkAvailable(context: Context): Boolean {
         val networkInfo = connectivityManager.activeNetworkInfo ?: return false
         return networkInfo.isConnected
     }
+}
+
+fun ByteArray.toBitmap(): Bitmap {
+    return BitmapFactory.decodeByteArray(this, 0, this.size)
+}
+
+fun Bitmap.toByteArray(): ByteArray {
+    val stream = ByteArrayOutputStream()
+    this.compress(Bitmap.CompressFormat.PNG, 100, stream)
+    return stream.toByteArray()
 }

@@ -25,7 +25,11 @@
         android:id="@+id/navigation_rooms"
         android:name="com.example.wakemeup.ui.rooms.RoomsFragment"
         android:label="@string/title_rooms"
-        tools:layout="@layout/fragment_rooms" />
+        tools:layout="@layout/fragment_rooms" >
+        <action
+            android:id="@+id/action_navigation_rooms_to_roomFragment"
+            app:destination="@id/roomFragment" />
+    </fragment>
     <fragment
         android:id="@+id/authenticationViewPagerFragment"
         android:name="com.example.wakemeup.ui.authentication.AuthenticationViewPagerFragment"
@@ -52,4 +56,9 @@
             android:id="@+id/action_startingFragment_to_navigation_friends"
             app:destination="@id/navigation_friends" />
     </fragment>
+    <fragment
+        android:id="@+id/roomFragment"
+        android:name="com.example.wakemeup.ui.room.RoomFragment"
+        android:label="fragment_room"
+        tools:layout="@layout/fragment_room" />
 </navigation>
