@@ -9,6 +9,7 @@ import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import com.example.wakemeup.data.UsersRepositoryImpl
 import com.example.wakemeup.domain.CreateUserUseCase
+import com.example.wakemeup.toByteArray
 import com.example.wakemeup.ui.authentication.login.LoginState
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.FirebaseAuthInvalidCredentialsException
@@ -60,7 +61,7 @@ class SignupViewModel : ViewModel() {
             FirebaseAuth.getInstance().currentUser!!.uid,
             name,
             phoneNumber,
-            bitmapToByteArray(userImage!!),
+            userImage!!.toByteArray(),
             UsersRepositoryImpl()
         )
         emit(state)
@@ -80,12 +81,6 @@ class SignupViewModel : ViewModel() {
         val x = (originalBitmap.width - size) / 2
         val y = (originalBitmap.height - size) / 2
         return Bitmap.createBitmap(originalBitmap, x, y, size, size)
-    }
-
-    private fun bitmapToByteArray(bitmap: Bitmap): ByteArray {
-        val stream = ByteArrayOutputStream()
-        bitmap.compress(Bitmap.CompressFormat.PNG, 100, stream)
-        return stream.toByteArray()
     }
 }
 

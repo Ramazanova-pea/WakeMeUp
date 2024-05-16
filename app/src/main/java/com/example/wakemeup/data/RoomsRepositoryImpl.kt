@@ -2,14 +2,15 @@ package com.example.wakemeup.data
 
 import android.util.Log
 import com.example.wakemeup.domain.CreateRoomState
+import com.example.wakemeup.domain.FriendModel
 import com.example.wakemeup.domain.RoomModel
 import com.example.wakemeup.domain.RoomsRepository
-import com.example.wakemeup.domain.UserModel
-import com.example.wakemeup.domain.UsersRepository
+import com.example.wakemeup.toBitmap
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.firestore.FirebaseFirestore
 import com.google.firebase.storage.FirebaseStorage
 import kotlinx.coroutines.tasks.await
+import java.util.Calendar
 
 /**
  * Data class representing a Room.
@@ -132,7 +133,7 @@ class RoomsRepositoryImpl : RoomsRepository {
      * @return A boolean representing whether the user joined the room.
      */
     override suspend fun joinRoom(roomId: String, uid: String): Boolean {
-        val room = roomModelToRoom(getRoom(roomId)?: return false)
+        val room = roomModelToRoom(getRoom(roomId) ?: return false)
         room.members.add(uid)
 
         // Remove duplicates from members
@@ -154,6 +155,28 @@ class RoomsRepositoryImpl : RoomsRepository {
         val db = FirebaseFirestore.getInstance()
         db.collection("rooms").document(roomId).set(room).await()
         return true
+    }
+
+    override suspend fun getMembers(roomId: String): List<FriendModel> {
+        val room = getRoom(roomId) ?: return emptyList()
+        val members = mutableListOf<FriendModel>()
+
+        for (memberId in room.members) {
+            val user = UsersRepositoryImpl().getUser(memberId) ?: continue
+            val calendar = Calendar.getInstance()
+            calendar.timeInMillis = user.timeToAwake
+            members.add(
+                FriendModel(
+                    user.name,
+                    user.phoneNumber,
+                    user.isAwake,
+                    calendar,
+                    user.profilePic.toBitmap()
+                )
+            )
+        }
+
+        return members
     }
 
     /**

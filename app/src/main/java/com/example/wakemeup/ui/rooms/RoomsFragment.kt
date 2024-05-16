@@ -1,5 +1,6 @@
 package com.example.wakemeup.ui.rooms
 
+import android.animation.ObjectAnimator
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -8,6 +9,7 @@ import androidx.appcompat.app.AppCompatDelegate
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import androidx.lifecycle.lifecycleScope
+import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.GridLayoutManager
 import com.example.wakemeup.R
 import com.example.wakemeup.databinding.FragmentFriendsBinding
@@ -15,7 +17,9 @@ import com.example.wakemeup.databinding.FragmentRoomsBinding
 import com.example.wakemeup.ui.join_room_dialog.JoinRoomDialogFragment
 import com.example.wakemeup.ui.new_room.AddNewRoomBottomSheet
 import com.google.firebase.auth.FirebaseAuth
+import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
+import kotlinx.coroutines.withContext
 
 class RoomsFragment : Fragment() {
 
@@ -55,8 +59,14 @@ class RoomsFragment : Fragment() {
         }
 
         roomsAdapter = RoomsAdapter(ArrayList())
+        roomsAdapter.onRoomClickListener = {
+            val bundle = Bundle()
+            bundle.putString("roomId", it.roomId)
+            findNavController().navigate(R.id.action_navigation_rooms_to_roomFragment, bundle)
+        }
         binding.roomsRecyclerView.layoutManager = GridLayoutManager(context, 2)
         binding.roomsRecyclerView.adapter = roomsAdapter
+
 
         binding.topAppBar.setOnMenuItemClickListener { menuItem ->
             when (menuItem.itemId) {
@@ -100,8 +110,28 @@ class RoomsFragment : Fragment() {
         lifecycleScope.launch {
             roomsViewModel.getRooms(FirebaseAuth.getInstance().uid!!).collect {
                 if (it) {
-                    binding.progressBar.visibility = View.GONE
+                    binding.progressBar.setProgressCompat(100, true)
+                    binding.progressBar.setVisibilityAfterHide(View.GONE)
+                    withContext(Dispatchers.IO) {
+                        Thread.sleep(1000)
+                    }
+
+                    binding.progressBar.hide()
+                    val animator = ObjectAnimator.ofFloat(
+                        binding.blockingView,
+                        "alpha",
+                        0.4f,
+                        0f
+                    )
+                    animator.duration = 500
+                    animator.start()
+
+                    withContext(Dispatchers.IO) {
+                        Thread.sleep(500)
+                    }
+
                     binding.blockingView.visibility = View.GONE
+
                 } else {
                     binding.progressBar.visibility = View.VISIBLE
                     binding.blockingView.visibility = View.VISIBLE

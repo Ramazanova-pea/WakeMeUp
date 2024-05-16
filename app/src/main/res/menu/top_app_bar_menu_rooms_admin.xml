@@ -7,7 +7,7 @@
         android:title="Edit for admin"
         android:contentDescription="Edit for admin in rooms"
         android:icon="@drawable/edit"
-        app:showAsAction="ifRoom"
+        app:showAsAction="always"
         />
 
     <item
@@ -15,7 +15,7 @@
         android:title="Overflow menu"
         android:contentDescription="Overflow menu"
         android:icon="@drawable/more"
-        app:showAsAction="ifRoom"
+        app:showAsAction="always"
         />
 
 </menu>

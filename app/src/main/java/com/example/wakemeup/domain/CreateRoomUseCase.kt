@@ -1,6 +1,7 @@
 package com.example.wakemeup.domain
 
 import android.graphics.Bitmap
+import com.example.wakemeup.toByteArray
 import com.google.firebase.storage.FirebaseStorage
 import kotlinx.coroutines.tasks.await
 import java.io.ByteArrayOutputStream
@@ -18,15 +19,9 @@ class CreateRoomUseCase {
                 return CreateRoomState.ROOM_ALREADY_EXISTS
             }
 
-            repository.addRoom(roomName, roomId, isPrivate, bitmapToByteArray(roomImage))
+            repository.addRoom(roomName, roomId, isPrivate, roomImage.toByteArray())
 
             return CreateRoomState.SUCCESS
-        }
-
-        private fun bitmapToByteArray(bitmap: Bitmap): ByteArray {
-            val stream = ByteArrayOutputStream()
-            bitmap.compress(Bitmap.CompressFormat.PNG, 100, stream)
-            return stream.toByteArray()
         }
     }
 }

@@ -10,6 +10,7 @@ data class RoomModel(
     val administrators: MutableList<String> = mutableListOf(),  // User IDs
     val notes: MutableMap<String, String> = mutableMapOf()  // User ID -> Note
 ) {
+
     override fun equals(other: Any?): Boolean {
         if (this === other) return true
         if (javaClass != other?.javaClass) return false

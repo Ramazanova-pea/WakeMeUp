@@ -10,4 +10,5 @@ interface RoomsRepository {
     suspend fun getRooms(uid: String): List<RoomModel>
     suspend fun getRoom(roomId: String): RoomModel?
     suspend fun joinRoom(roomId: String, uid: String): Boolean
+    suspend fun getMembers(roomId: String): List<FriendModel>
 }

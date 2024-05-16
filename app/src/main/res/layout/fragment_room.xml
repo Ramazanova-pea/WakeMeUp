@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ui.settings.SettingsFragment">
+    tools:context=".ui.room.RoomFragment">
 
     <com.google.android.material.appbar.AppBarLayout
         android:layout_width="match_parent"
@@ -14,16 +14,15 @@
             android:id="@+id/topAppBar"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:minHeight="?attr/actionBarSize"
-            app:navigationIcon="@drawable/arrow_back"
-            app:menu="@menu/top_app_bar_menu_rooms_admin"
-            app:subtitleCentered="true"
-            app:titleCentered="true"
             android:backgroundTint="@color/design_default_color_surface"
+            android:minHeight="?attr/actionBarSize"
+            app:menu="@menu/top_app_bar_menu_rooms_admin"
+            app:navigationIcon="@drawable/arrow_back"
             app:subtitle="ID:"
+            app:subtitleCentered="true"
             app:title="RoomName"
-            app:titleTextColor="@color/md_theme_onSurface"
-            />
+            app:titleCentered="true"
+            app:titleTextColor="@color/md_theme_onSurface" />
 
     </com.google.android.material.appbar.AppBarLayout>
 
@@ -36,76 +35,79 @@
             android:id="@+id/roomImage"
             android:layout_width="64dp"
             android:layout_height="64dp"
-            android:src="@drawable/closed_eye"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            android:layout_marginTop="16dp"/>
-
-        <TextView
-            android:id="@+id/roomDescriptionText"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
             android:layout_marginTop="16dp"
-            android:layout_marginHorizontal="32dp"
-            android:text="Descriptions: "
-            android:textColor="@color/md_theme_onSurface"
-            app:layout_constraintTop_toBottomOf="@id/roomImage"
-            app:layout_constraintStart_toStartOf="parent"
+            android:src="@drawable/closed_eye"
             app:layout_constraintEnd_toEndOf="parent"
-            android:textSize="18sp"/>
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:shapeAppearanceOverlay="@style/roundedImageViewRounded"/>
+
 
         <TextView
             android:id="@+id/memberText"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            app:layout_constraintTop_toBottomOf="@id/roomDescriptionText"
-            app:layout_constraintStart_toStartOf="parent"
-            android:layout_margin="16dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginStart="32dp"
+            android:text="@string/members"
             android:textColor="@color/md_theme_onSurface"
-            android:text="Members"
             android:textSize="24dp"
-            android:textStyle="bold" />
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/roomImage" />
 
         <com.google.android.material.divider.MaterialDivider
             android:id="@+id/extraDivider"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginStart="32dp"
+            android:layout_marginEnd="32dp"
+            android:layout_marginTop="8dp"
             app:dividerThickness="2dp"
-            android:minWidth="0dp"
-            android:layout_marginEnd="16dp"
-            android:layout_marginStart="16dp"
-            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/memberText"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintBottom_toBottomOf="@id/memberText"/>
+            app:layout_constraintStart_toStartOf="parent" />
 
         <ImageView
             android:layout_width="12dp"
             android:layout_height="12dp"
             android:src="@drawable/diamond"
+            app:layout_constraintBottom_toBottomOf="@id/extraDivider"
             app:layout_constraintEnd_toStartOf="@id/extraDivider"
             app:layout_constraintTop_toTopOf="@id/extraDivider"
-            app:layout_constraintBottom_toBottomOf="@id/extraDivider"
-            app:tint="@color/md_theme_outlineVariant"/>
+            app:tint="@color/md_theme_outlineVariant" />
 
         <ImageView
             android:layout_width="12dp"
             android:layout_height="12dp"
             android:src="@drawable/diamond"
+            app:layout_constraintBottom_toBottomOf="@id/extraDivider"
             app:layout_constraintStart_toEndOf="@id/extraDivider"
             app:layout_constraintTop_toTopOf="@id/extraDivider"
-            app:layout_constraintBottom_toBottomOf="@id/extraDivider"
-            app:tint="@color/md_theme_outlineVariant"/>
+            app:tint="@color/md_theme_outlineVariant" />
 
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/room_members_recycler_view"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            app:layout_constraintTop_toBottomOf="@+id/extraDivider"
-            app:layout_behavior="@string/appbar_scrolling_view_behavior" />
+            android:layout_marginTop="16dp"
+            app:layout_behavior="@string/appbar_scrolling_view_behavior"
+            app:layout_constraintTop_toBottomOf="@+id/extraDivider" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
+    <View
+        android:id="@+id/blockingView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#000"
+        android:alpha="0.4"
+        android:visibility="visible"/>
 
-
+    <com.google.android.material.progressindicator.CircularProgressIndicator
+        android:id="@+id/progressBar"
+        android:indeterminate="true"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"/>
 </androidx.coordinatorlayout.widget.CoordinatorLayout>

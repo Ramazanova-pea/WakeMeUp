@@ -1,11 +1,10 @@
 package com.example.wakemeup.data
 
-import android.graphics.Bitmap
-import android.graphics.BitmapFactory
 import android.util.Log
 import com.example.wakemeup.domain.FriendModel
 import com.example.wakemeup.domain.UserModel
 import com.example.wakemeup.domain.UsersRepository
+import com.example.wakemeup.toBitmap
 import com.google.firebase.Timestamp
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.firestore.FirebaseFirestore
@@ -19,7 +18,7 @@ import java.util.Calendar
  * @param name The name of the user.
  * @param phoneNumber The phone number of the user.
  * @param profilePicUrl The URL of the user's profile picture.
- * @param isAwake Whether the user is awake.
+ * @param awake Whether the user is awake.
  * @param timeToAwake The time the user is set to wake up.
  * @param rooms The list of rooms the user is in.
  */
@@ -27,7 +26,7 @@ data class User(
     val uid: String = "",
     val name: String = "",
     val phoneNumber: String = "",
-    val isAwake: Boolean = false,
+    val awake: Boolean = false,
     val timeToAwake: Timestamp = Timestamp.now(),
     val rooms: MutableList<String> = mutableListOf()  // rooms IDs
 )
@@ -64,7 +63,7 @@ class UsersRepositoryImpl : UsersRepository {
                 user.name,
                 user.phoneNumber,
                 profilePic,
-                user.isAwake,
+                user.awake,
                 user.timeToAwake.seconds,
                 user.rooms
             )
@@ -161,18 +160,9 @@ class UsersRepositoryImpl : UsersRepository {
                 it.phoneNumber,
                 it.isAwake,
                 calendar,
-                bytearrayToBitmap(it.profilePic.toList())
+                it.profilePic.toBitmap()
             )
         })
     }
 
-    /**
-     * Converts a list of bytes to a Bitmap.
-     * @param byteList The list of bytes.
-     * @return The Bitmap.
-     */
-    private fun bytearrayToBitmap(byteList: List<Byte>): Bitmap {
-        val byteArray = byteList.toByteArray()
-        return BitmapFactory.decodeByteArray(byteArray, 0, byteArray.size)
-    }
 }
