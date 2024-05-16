@@ -56,8 +56,11 @@ dependencies {
     // Firebase main dependencies
     implementation(platform("com.google.firebase:firebase-bom:33.0.0"))
     implementation("com.google.firebase:firebase-analytics")
-    // Firestore
+
+    // Firestore (for databases)
     implementation("com.google.firebase:firebase-firestore-ktx")
+
+    // Firebase Storage (for photos)
     implementation("com.google.firebase:firebase-storage-ktx")
 
     // Auth
